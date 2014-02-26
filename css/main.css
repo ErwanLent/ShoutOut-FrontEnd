@@ -277,6 +277,114 @@ a
     font-size: 75px;
 }
 
+footer
+{
+    background-color: rgba(255, 61, 51, 1);
+    text-align: center;
+    color: #ecf0f1;
+}
+
+footer h1, footer h3
+{
+    margin: 0;
+    padding: 0;
+}
+
+.connect-header
+{
+    font-size: 50px;
+    margin: 0;
+    padding: 20px;
+    font-family: proxima_nova_rgbold;
+}
+
+.social-slide
+{
+    margin: 0;
+    padding: 0;
+    padding: 20px;
+}
+
+.social-slide li
+{
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.social-slide li a
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.social-slide li:hover 
+{
+    background-position: 0px -48px;
+    box-shadow: 0px 0px 5px 1px rgba(255,255,255,0.4);
+}
+
+.twitter
+{
+    background-image: url('../img/twitter.png');
+}
+
+.facebook
+{
+    background-image: url('../img/facebook.png');
+}
+
+.google
+{
+    background-image: url('../img/google.png');
+}
+
+.linkedin
+{
+    background-image: url('../img/linkedin.png');
+}
+
+footer .large-logo
+{
+    margin-bottom: 20px;
+}
+
+
+footer .large-logo:hover
+{
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    -webkit-transform: rotate(360deg); 
+    -moz-transform: rotate(360deg); 
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg); 
+}
+
+.divider
+{
+    max-width: 300px;
+    margin: auto;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
