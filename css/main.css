@@ -385,6 +385,116 @@ footer .large-logo:hover
     background-image: -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
 }
 
+.chatrooms-image
+{
+    width: 350px;
+    float: left;
+}
+
+.about
+{
+    max-width: 1024px;
+    margin: auto;
+}
+
+.overlay-container
+{
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    position: absolute;
+}
+
+.chatroom-overlay
+{
+    width: 248px;
+    height: 39px;
+    float: left;
+    margin-top: 264px;
+    margin-left: 51px;
+    overflow: hidden;
+}
+
+.chatroom-slider
+{
+    background-image: url("../img/slider.png");
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+.section-separator
+{
+    width: 100%;
+    height: 200px;
+    background-image: url('../img/separator.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.more-info
+{
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    text-align: right;
+}
+
+.more-info .screenshot
+{
+    width: 250px;
+}
+
+.separator-overlay
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 61, 51, 0.65);
+}
+
+.title-line 
+{
+    border-bottom: 1px solid #D5D5D5;
+    display: block;
+    height: 1px;
+    margin: auto;
+    width: 90px;
+    margin-top: .5em;
+}
+
+.separator-content
+{
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.separator-header
+{
+    font-family: proxima_nova_rgbold;
+    font-size: 31px;
+    padding-top: 65px;
+}
+
+.animation-container
+{
+    padding-top: 50px;
+    height: 660px;
+    padding-bottom: 15px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

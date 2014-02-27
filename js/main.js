@@ -24,6 +24,28 @@ $(document).ready(function()
 		longitude += .03;
 		map.setCenter(new google.maps.LatLng(latitude, longitude));
 	}, 10);
+
+	
+	var margin = 72;
+	var state = "right";
+
+	setInterval(function(){
+		switch(state)
+		{
+			case "right":
+			  	$('.chatroom-slider').css('margin-left', margin);
+			  	state = "left";
+			  	break;
+			case "left":
+			  	$('.chatroom-slider').css('margin-left', margin * -1);
+			  	state = "reset";
+			 	break;
+			 case "reset":
+			 	$('.chatroom-slider').css('margin-left', 0);
+			 	state = "right";
+			 	break;
+		}
+	}, 1500);
 	
 });
 
