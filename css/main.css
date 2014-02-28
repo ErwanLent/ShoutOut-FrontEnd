@@ -517,8 +517,8 @@ footer .large-logo:hover
 {
     height: 3px;
     border-bottom: 1px solid #e7e6e9;
-    margin-left: 5px;
     width: 279px;
+    margin: 25px 0 35px 5px;
 }
 
 .right-column
