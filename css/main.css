@@ -388,15 +388,16 @@ footer .large-logo:hover
 
 .chatrooms-image
 {
-    width: 350px;
+    width: 100%;
     float: left;
 }
 
 .about
 {
     max-width: 1024px;
+    min-height: 723px;
     margin: auto;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -451,11 +452,21 @@ footer .large-logo:hover
     max-width: 1024px;
     margin: auto;
     text-align: right;
+    overflow: auto;
 }
 
 .more-info .screenshot
 {
     width: 350px;
+    float: right;
+    padding: 50px 0 50px 0;
+    overflow: hidden;
+    min-height: 658px;
+}
+
+.more-info .screenshot img
+{
+    width: 100%;
 }
 
 .separator-overlay
@@ -495,7 +506,7 @@ footer .large-logo:hover
 {
     width: 350px;
     padding-top: 50px;
-    height: 660px;
+    min-height: 658px;
     padding-bottom: 15px;
     display: inline-block;
     float: left;
@@ -530,11 +541,36 @@ footer .large-logo:hover
     max-width: 450px;
 }
 
-.right-column p
+.right-column p, .left-column p
 {
     font-size: 18px;
     font-family: proxima_nova_rgregular;
 }
+
+.left-column
+{
+    float: right;
+    display: inline-block;
+    margin-right: 150px;
+    max-width: 450px;
+    text-align: left;
+}
+
+.announcement
+{
+    color: white;
+    font-size: 18px;
+    font-family: proxima_nova_rgregular;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 75px;
+}
+
+.intro-content .title-line
+{
+    color: white;
+}
+
 
 /* ==========================================================================
    Helper classes

@@ -46,6 +46,26 @@ $(document).ready(function()
 			 	break;
 		}
 	}, 1500);
+
+	// Handle Content Animations Based On Scroll Location
+	var isFirstContentShowing = false;
+	var isSecondContentShowing = false;
+
+	$(window).scroll(function() {
+	    var height = $(window).scrollTop();
+
+	    if(!isFirstContentShowing && height  > 100) {
+	    	isFirstContentShowing = true;
+	        $('.animation-container').removeClass('hidden');
+	        $('.right-column').removeClass('hidden');
+	    }
+
+	    if(!isSecondContentShowing && height  > 850) {
+	    	isSecondContentShowing = true;
+	        $('#more-info-image').removeClass('hidden');
+	    }
+
+	});
 	
 });
 
