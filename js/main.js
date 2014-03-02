@@ -1,9 +1,30 @@
 $(document).ready(function() 
 {
+	/*=====================================================================================
+		Add Smooth Scrolling For Windows Webkit Users
+	=======================================================================================*/
+	if (navigator.userAgent.indexOf('Windows') != -1 && 
+		navigator.userAgent.indexOf('WebKit') != -1)
+	{
+		var smoothScrollingScript = document.createElement('script');
+		smoothScrollingScript.src = '/js/smoothscroll.js';
+
+		var firstScript = document.getElementsByTagName('script')[0];
+		firstScript.parentNode.insertBefore(smoothScrollingScript, firstScript);
+	}
+
+	/*=====================================================================================
+		Load Map With Santa Barbara Coordinates
+	=======================================================================================*/
+
 	var latitude = 34.4258;
 	var longitude = -119.7142;
 
-	var map = loadMap();
+	var map = loadMap(latitude, longitude);
+
+	/*=====================================================================================
+		Hangle Logo And Map Animations
+	=======================================================================================*/
 
 	$('.bar-logo').addClass("rotate");
 
@@ -26,6 +47,10 @@ $(document).ready(function()
 	}, 10);
 
 	
+	/*=====================================================================================
+		Hangle iPhone Chatroom Sliding Animation
+	=======================================================================================*/
+
 	var margin = 72;
 	var state = "right";
 
@@ -47,7 +72,10 @@ $(document).ready(function()
 		}
 	}, 1500);
 
-	// Handle Content Animations Based On Scroll Location
+	/*=====================================================================================
+		Handle Content Animations Based On Scroll Location
+	=======================================================================================*/
+	
 	var isFirstContentShowing = false;
 	var isSecondContentShowing = false;
 
@@ -69,7 +97,7 @@ $(document).ready(function()
 	
 });
 
-function loadMap()
+function loadMap(latitude, longitude)
 {
 	var map;
 	var pgLocation = new google.maps.LatLng(34.4258, -119.7142);

@@ -181,10 +181,8 @@ a
 .top-bar ul
 {
     margin: 0;
-    padding: 0;
     color: #2c3e50;
     float: right;
-    overflow: auto;
     padding: 5px;
 }
 
