@@ -51,18 +51,19 @@ $(document).ready(function()
 		Hangle iPhone Chatroom Sliding Animation
 	=======================================================================================*/
 
-	var margin = 72;
+	var marginRight = 72;
+	var marginLeft = 145;
 	var state = "right";
 
 	setInterval(function(){
 		switch(state)
 		{
 			case "right":
-			  	$('.chatroom-slider').css('margin-left', margin);
+			  	$('.chatroom-slider').css('margin-left', marginRight);
 			  	state = "left";
 			  	break;
 			case "left":
-			  	$('.chatroom-slider').css('margin-left', margin * -1);
+			  	$('.chatroom-slider').css('margin-left', marginLeft * -1);
 			  	state = "reset";
 			 	break;
 			 case "reset":

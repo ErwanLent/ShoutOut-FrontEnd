@@ -262,7 +262,7 @@ a
 {
     position: absolute;
     z-index: 100;
-    margin-top: 150px;
+    margin-top: 184px;
     margin-left: auto;
     margin-right: auto;
     left:0;
@@ -410,20 +410,20 @@ footer .large-logo:hover
 
 .chatroom-overlay
 {
-    width: 248px;
-    height: 39px;
+    width: 263px;
+    height: 60px;
     float: left;
-    margin-top: 264px;
-    margin-left: 51px;
+    margin-top: 229px;
+    margin-left: 45px;
     overflow: hidden;
 }
 
 .chatroom-slider
 {
     background-image: url("../img/slider.png");
+    background-size: contain;
     width: 100%;
     height: 100%;
-
     -webkit-transition: all ease 0.5s;
     -moz-transition: all ease 0.5s;
     -o-transition: all ease 0.5s;
@@ -435,7 +435,7 @@ footer .large-logo:hover
 {
     width: 100%;
     height: 200px;
-    background-image: url('../img/separator.jpg');
+    background-image: url('../img/separator.png');
     background-position: center;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -456,7 +456,7 @@ footer .large-logo:hover
 
 .more-info .screenshot
 {
-    width: 350px;
+    width: 370px;
     float: right;
     padding: 50px 0 50px 0;
     overflow: hidden;
