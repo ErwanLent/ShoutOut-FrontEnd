@@ -641,6 +641,25 @@ footer .large-logo:hover
     width: 300px;
 }
 
+.download
+{
+    margin: 20px;
+    background-color: #e74c3c;
+    border: none;
+    color: #ecf0f1;
+    font-size: 20px;
+    margin-bottom: 50px;
+    padding: 10px 15px;
+    border-top: 3px #c0392b solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: proxima_nova_rgregular;
+}
+
 
 /* ==========================================================================
    Media Queries
