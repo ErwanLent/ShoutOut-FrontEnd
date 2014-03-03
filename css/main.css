@@ -27,6 +27,25 @@
 
 }
 
+[class*="icon-"] {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('/img/menu.svg');
+    background-repeat: no-repeat;
+}
+
+.icon-list 
+{
+    background-position: 0 0;
+    width: 32px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 6px;
+    cursor: pointer;
+    display: none;
+}
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -189,8 +208,8 @@ a
 .top-bar li
 {
     display: inline-block;
-    padding: 9px 10px;
     font-size: 15px;
+    padding: 9px 10px;
     cursor: pointer;
     font-family: proxima_nova_rgregular;
 }
@@ -200,6 +219,11 @@ a
     background-color: #FF3D33;
     border-radius: 5px;
     color: white;
+}
+
+.top-bar li a
+{
+    
 }
 
 .intro
@@ -449,9 +473,10 @@ footer .large-logo:hover
 {
     width: 100%;
     max-width: 1024px;
+    min-height: 758px;
     margin: auto;
     text-align: right;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .more-info .screenshot
@@ -460,7 +485,6 @@ footer .large-logo:hover
     float: right;
     padding: 50px 0 50px 0;
     overflow: hidden;
-    min-height: 658px;
 }
 
 .more-info .screenshot img
@@ -568,6 +592,127 @@ footer .large-logo:hover
 .intro-content .title-line
 {
     color: white;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media screen and (max-width: 980px) {
+    .animation-container 
+    {
+        float: none;
+        margin: auto;
+        display: block;
+    }
+
+    .right-column
+    {
+        margin: auto;
+        text-align: center;
+        float: none;
+        display: block;
+    }
+
+    .content-header .title-line
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .right-column p
+    {
+        text-align: justify;
+    }
+
+    .more-info .screenshot
+    {
+        float: none;
+        margin: auto;
+    }
+
+    .left-column 
+    {
+        float: none;
+        text-align: center;
+        margin: auto;
+        display: block;
+    }
+
+    .left-column p
+    {
+        text-align: justify;
+        margin-bottom: 50px;
+    }
+
+    .more-info .content-header
+    {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 810px) {
+    .separator-content .title-line
+    {
+        margin-bottom: 65px;
+    }
+
+    .section-separator
+    {
+        height: 100%;
+        min-height: 200px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .top-bar li 
+    {
+        display: none;
+    }
+
+    .icon-list
+    {
+        display: block;
+    }
+
+
+
+}
+
+@media screen and (max-width: 485px) {
+    .left-column p, .right-column p
+    {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .intro-content h1
+    {
+        font-size: 55px;
+    }
+
+    .more-info .screenshot
+    {
+        width: 90%;
+    }
+
+    .animation-container 
+    {
+        width: 300px;
+        min-height: 565px;
+    }
+
+    .chatroom-overlay
+    {
+        margin-top: 196px;
+        margin-left: 39px;
+        width: 225px;
+        height: 53px;
+    }
+
 }
 
 

@@ -14,6 +14,51 @@ $(document).ready(function()
 	}
 
 	/*=====================================================================================
+		Link Functionality In Top Bar
+	=======================================================================================*/
+	$('#links li').click(function(e) {
+		var link = $(this).find('a:first').attr('data');
+		if (link == "about")
+		{
+			$('html, body').stop().animate({
+					scrollTop: $('.about').offset().top - 50
+			}, 700, 'easeInOutQuad');
+		}
+		else
+			window.open(link);
+	});
+
+	/*=====================================================================================
+		Responsive Hamburger Menu
+	=======================================================================================*/
+	var isShowing = false;
+	$('.icon-list').click(function(){
+		if (!isShowing)
+		{
+			$('.top-bar ul').css('float', 'none');
+			$('.top-bar ul').css('display', 'block');
+			$('.top-bar li').css('text-align', 'center');
+			$('.top-bar li').css('display', 'block');
+			isShowing = true;
+		}
+		else
+		{
+			$('.top-bar ul').removeAttr('style');
+			$('.top-bar li').removeAttr('style');
+			isShowing = false;
+		}
+	});
+
+	$( window ).resize(function() {
+  		if (isShowing && $(window).width() > 450)
+  		{
+  			$('.top-bar ul').removeAttr('style');
+			$('.top-bar li').removeAttr('style');
+			isShowing = false;
+  		}
+	});
+
+	/*=====================================================================================
 		Load Map With Santa Barbara Coordinates
 	=======================================================================================*/
 
@@ -89,7 +134,7 @@ $(document).ready(function()
 	        $('.right-column').removeClass('hidden');
 	    }
 
-	    if(!isSecondContentShowing && height  > 850) {
+	    if(!isSecondContentShowing && height  > 900) {
 	    	isSecondContentShowing = true;
 	        $('#more-info-image').removeClass('hidden');
 	    }
