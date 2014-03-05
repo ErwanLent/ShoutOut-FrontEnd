@@ -660,11 +660,12 @@ footer .large-logo:hover
     background-color: #ff3d33;
     border: none;
     color: white;
-    padding: 4px 12px;
+    padding: 5px 12px;
     text-decoration: none;
     font-size: 16px;
     font-family: proxima_nova_rgregular;
     margin-bottom: 0;
+    border-radius: 3px;
 }
 
 .error

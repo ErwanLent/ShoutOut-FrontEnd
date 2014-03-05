@@ -173,12 +173,22 @@ $(document).ready(function()
 							$.post("php/AddEmail.php", { email: email }).done(function(response) {
 								if(response.indexOf('True') != -1)
 								{
-									$('.lightbox-content h1').text("Thank you.");
-									$('.lightbox-content small').hide();
-									$('#email-input').hide();
-									$('#submit-email').hide();
-
 									setSubscribedCookie("true");
+
+									$('.lightbox-content small').fadeOut();
+									$('#email-input').fadeOut();
+									$('#submit-email').fadeOut();
+									$('.lightbox-content h1').fadeOut(function(){
+
+										$('.lightbox-content h1').text("Thank you.");
+										$('.lightbox-content h1').css('margin-top', '19%');
+
+										$('.lightbox-content small').remove();
+										$('#email-input').remove();
+										$('#submit-email').remove();
+
+										$('.lightbox-content h1').fadeIn();
+									});
 								}
 								else
 								{
