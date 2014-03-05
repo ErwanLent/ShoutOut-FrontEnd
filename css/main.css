@@ -27,16 +27,13 @@
 
 }
 
-[class*="icon-"] {
+.icon-list 
+{
     display: inline-block;
     width: 32px;
     height: 32px;
     background-image: url('/img/menu.svg');
     background-repeat: no-repeat;
-}
-
-.icon-list 
-{
     background-position: 0 0;
     width: 32px;
     float: right;
@@ -45,6 +42,21 @@
     cursor: pointer;
     display: none;
 }
+
+.icon-cross 
+{
+    display: inline;
+    height: 32px;
+    background-image: url('/img/cross.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 32px;
+    margin: 5px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
 
 
 /* ==========================================================================
@@ -627,31 +639,39 @@ footer .large-logo:hover
 
 .lightbox-content input
 {
-    margin-top: 18px;
+    margin-top: 8px;
+    padding: 5px;
+    font-size: 14px;
+    font-family: proxima_nova_rgregular;
 }
 
 .lightbox-content input:focus
 {
-    border:2px solid #00aed7;
+    outline-width: 0;
+    border:2px solid #FF3D33;
 }
 
 .button
 {
+    outline-width: 0;
     display: block;
     margin: auto;
     margin-top: 15px;
-    background-color: #e74c3c;
+    background-color: #ff3d33;
     border: none;
-    color: #ecf0f1;
+    color: white;
     padding: 4px 12px;
-    border-top: 3px #c0392b solid;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     text-decoration: none;
     font-size: 16px;
     font-family: proxima_nova_rgregular;
     margin-bottom: 0;
+}
+
+.error
+{
+    color: red;
+    display: block;
+    height: 18px;
 }
 
 
@@ -775,6 +795,21 @@ footer .large-logo:hover
         margin-left: 39px;
         width: 225px;
         height: 53px;
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .lightbox
+    {
+        width: 90%;
+        margin-right: 15px;
+    }
+    
+    .lightbox-content
+    {
+        width: 100%;
     }
 
 }

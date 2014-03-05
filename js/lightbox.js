@@ -115,10 +115,10 @@
 			var that = this;
 			if (this.isShown && this.options.keyboard)
 			{
-				this.$element.on('keypress.dismiss.lightbox, keyup.dismiss.lightbox', function ( e )
-				{
-					e.which == 27 && that.hide();
-				});
+				// this.$element.on('keypress.dismiss.lightbox, keyup.dismiss.lightbox', function ( e )
+				// {
+				// 	e.which == 27 && that.hide();
+				// });
 			}
 			else if (!this.isShown)
 			{
@@ -165,11 +165,11 @@
 				this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
 					.appendTo(document.body);
 
-				this.$backdrop.click(
-					this.options.backdrop == 'static' ?
-						$.proxy(this.$element[0].focus, this.$element[0]) :
-						$.proxy(this.hide, this)
-				);
+				// this.$backdrop.click(
+					// this.options.backdrop == 'static' ?
+					// 	$.proxy(this.$element[0].focus, this.$element[0]) :
+					// 	$.proxy(this.hide, this)
+				// );
 
 				if (doAnimate) this.$backdrop[0].offsetWidth; // force reflow
 

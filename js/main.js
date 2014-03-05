@@ -152,27 +152,56 @@ $(document).ready(function()
 
 	    // Bottom of page
 	    if (document.body.scrollHeight == (document.body.scrollTop + window.innerHeight)) {
-        	
-        	// Show email subscription
-	    	if (!isLightboxShowing && !isSubscribed())
-	    	{
-				$('#email-subscription-toggle').click();
-				isLightboxShowing = true;
 
-				$('#submit-email').click(function(){
-					$.post("php/AddEmail.php", { email: $('#email-input').val() }).done(function(response) {
-						if(response.indexOf('True') != -1)
-						{
-							$('.lightbox-content h1').text("Thank you.");
-							$('.lightbox-content small').hide();
-							$('#email-input').hide();
-							$('#submit-email').hide();
+	    	setTimeout(function(){
+	    		// Show email subscription
+		    	if (!isLightboxShowing && !isSubscribed())
+		    	{
+		    		// Show dialog
+					$('#email-subscription-toggle').click();
+					isLightboxShowing = true;
 
-							setSubscribedCookie("true");
+					// On enter
+					$('#email-input').keypress(function (event) {
+						if (event.which == 13) {
+							$('#submit-email').click();
 						}
 					});
-				});
-	    	}
+
+					// Close
+					$('.icon-cross').click(function(){
+						$('#email-subscription-toggle').click();
+					});
+
+					$('#submit-email').click(function(){
+
+						var email = $('#email-input').val();
+
+						if (email.length <= 0 || !checkEmail(email))
+						{
+							$('.error').html("Please enter in a valid email.");
+						}
+						else
+						{
+							$.post("php/AddEmail.php", { email: email }).done(function(response) {
+								if(response.indexOf('True') != -1)
+								{
+									$('.lightbox-content h1').text("Thank you.");
+									$('.lightbox-content small').hide();
+									$('#email-input').hide();
+									$('#submit-email').hide();
+
+									setSubscribedCookie("true");
+								}
+								else
+								{
+									$('.error').append("An error occurred while adding your email.");
+								}
+							});
+						}
+					});
+		    	}
+	    	}, 1000);
 
     	}
 	});
@@ -231,4 +260,14 @@ function resetMenu()
 	setTimeout(function(){
 		$('.top-bar').show();
 	}, 1);
+}
+
+function checkEmail(email) 
+{
+    var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (!filter.test(email)) 
+    	return false;
+	else
+		return true;
 }
