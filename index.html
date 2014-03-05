@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ShoutOut - Connecting People</title>
-        <meta name="description" content="ShoutOut is a location based chatting app.">
+        <title>ShoutOut - Location Based Chatting</title>
+        <meta name="description" content="ShoutOut is a location based chatting application coming soon to iPhone, iPad, and Android. Users can create or join chatrooms based on their location.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/normalize.css">
@@ -19,8 +19,6 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-            
         <nav class="top-bar">
             <div class="inner-bar">
             <a href="#">
@@ -30,16 +28,16 @@
             <span class="icon-list"></span>
                 <ul id="links">
                     <li>
-                        <a data="about">About</a>
+                        <a href="#" id="about">About</a>
                     </li>
                     <li>
-                        <a data="http://blog.getshoutout.me/">Our Blog</a>
+                        <a href="http://blog.getshoutout.me/" target="_blank">Our Blog</a>
                     </li>
                     <li>
-                        <a data="/media">Media Requests</a>
+                        <a href="/media">Media Assets</a>
                     </li>
                     <li>
-                        <a data="mailto:contact@getshoutout.me">Contact</a>
+                        <a href="mailto:contact@getshoutout.me" target="_blank">Contact</a>
                     </li>
                 </ul>
 
@@ -50,8 +48,10 @@
             <div class="intro-content">
                 <img src="img/large.png" class="large-logo animated slideInDown" alt="ShoutOut Logo">
                 <h1 class="animated flip">ShoutOut</h1>
-<!--                 <h4 class="announcement">ShoutOut Will Be Available On iOS In Early April Of 2014</h4>
-                <i class="title-line"></i> -->
+                <div style="display: none;" id="coming-soon">
+                        <h4 class="announcement">ShoutOut Is Coming Soon To iOS and Android.</h4>
+                        <i class="title-line"></i>
+                </div>
             </div>
             <div class="map-container">
                 <div id="map"></div>

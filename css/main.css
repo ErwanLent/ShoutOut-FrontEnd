@@ -209,7 +209,6 @@ a
 {
     display: inline-block;
     font-size: 15px;
-    padding: 9px 10px;
     cursor: pointer;
     font-family: proxima_nova_rgregular;
 }
@@ -223,7 +222,8 @@ a
 
 .top-bar li a
 {
-    
+    display: inline-block;
+    padding: 9px 10px;
 }
 
 .intro
@@ -744,7 +744,7 @@ footer .large-logo:hover
  */
 
 .hidden {
-    display: none !important;
+    display: none;
     visibility: hidden;
 }
 

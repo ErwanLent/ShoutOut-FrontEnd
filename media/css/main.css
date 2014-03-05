@@ -636,6 +636,11 @@ footer .large-logo:hover
     margin: 10px;
 }
 
+.grid ul li:hover
+{
+    border: 3px #34495e solid;
+}
+
 .grid img
 {
     width: 300px;
@@ -658,6 +663,11 @@ footer .large-logo:hover
     text-decoration: none;
     font-size: 18px;
     font-family: proxima_nova_rgregular;
+}
+
+.center
+{
+    text-align: center;
 }
 
 

@@ -14,19 +14,14 @@ $(document).ready(function()
 	}
 
 	/*=====================================================================================
-		Link Functionality In Top Bar
+		About Scrolling Animation
 	=======================================================================================*/
-	$('#links li').click(function(e) {
-		var link = $(this).find('a:first').attr('data');
-		if (link == "about")
-		{
+
+		$('#about').click(function() {
 			$('html, body').stop().animate({
-					scrollTop: $('.about').offset().top - 50
+				scrollTop: $('.about').offset().top - 50
 			}, 700, 'easeInOutQuad');
-		}
-		else
-			window.open(link);
-	});
+		});
 
 	/*=====================================================================================
 		Responsive Hamburger Menu
@@ -46,6 +41,8 @@ $(document).ready(function()
 			$('.top-bar ul').removeAttr('style');
 			$('.top-bar li').removeAttr('style');
 			isShowing = false;
+
+			resetMenu();
 		}
 	});
 
@@ -55,6 +52,8 @@ $(document).ready(function()
   			$('.top-bar ul').removeAttr('style');
 			$('.top-bar li').removeAttr('style');
 			isShowing = false;
+
+			resetMenu();
   		}
 	});
 
@@ -76,6 +75,7 @@ $(document).ready(function()
 	setTimeout(function() {
 		$('.bar-logo').removeClass("duration");
 		$('.bar-logo').removeClass("rotate");
+		$('#coming-soon').fadeIn('slow');
 	}, 1000);
 
 	setTimeout(function() {
@@ -160,4 +160,13 @@ function loadMap(latitude, longitude)
 		 	};
 
 	return new google.maps.Map(document.getElementById("map"), pgOptions);	
+}
+
+function resetMenu()
+{
+	$('.top-bar').hide();
+	setTimeout(function(){
+		$('.top-bar').show();
+	}, 1);
+
 }
