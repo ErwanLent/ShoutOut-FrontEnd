@@ -151,7 +151,7 @@ $(document).ready(function()
 	    }
 
 	    // Bottom of page
-	    if (document.body.scrollHeight == (document.body.scrollTop + window.innerHeight)) {
+	    if (document.body.scrollHeight <= (document.body.scrollTop + window.innerHeight + 200)) {
 
 	    	setTimeout(function(){
 	    		// Show email subscription
