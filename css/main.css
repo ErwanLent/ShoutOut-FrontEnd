@@ -594,6 +594,67 @@ footer .large-logo:hover
     color: white;
 }
 
+.modal-backdrop 
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+    opacity: .7;
+}
+
+.lightbox-content
+{
+    background-color:white;
+    width:400px; 
+    min-height:200px;
+    border-radius: 0;
+}
+
+.lightbox
+{
+    margin-top: 10%;
+    font-family: proxima_nova_rgregular;
+}
+
+.lightbox-content h1
+{
+    margin-bottom: 0;
+}
+
+.lightbox-content input
+{
+    margin-top: 18px;
+}
+
+.lightbox-content input:focus
+{
+    border:2px solid #00aed7;
+}
+
+.button
+{
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #e74c3c;
+    border: none;
+    color: #ecf0f1;
+    padding: 4px 12px;
+    border-top: 3px #c0392b solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: proxima_nova_rgregular;
+    margin-bottom: 0;
+}
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -678,7 +739,10 @@ footer .large-logo:hover
         display: block;
     }
 
-
+    .top-bar li a
+    {
+        width: 100%;
+    }
 
 }
 

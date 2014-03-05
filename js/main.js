@@ -46,6 +46,15 @@ $(document).ready(function()
 		}
 	});
 
+	// Close Menu On Item Click
+	$('.top-bar li a').click(function(){
+		$('.top-bar ul').removeAttr('style');
+		$('.top-bar li').removeAttr('style');
+		isShowing = false;
+
+		resetMenu();
+	});
+
 	$( window ).resize(function() {
   		if (isShowing && $(window).width() > 450)
   		{
@@ -124,8 +133,10 @@ $(document).ready(function()
 	
 	var isFirstContentShowing = false;
 	var isSecondContentShowing = false;
+	var isLightboxShowing = false;
 
 	$(window).scroll(function() {
+
 	    var height = $(window).scrollTop();
 
 	    if(!isFirstContentShowing && height  > 100) {
@@ -139,8 +150,32 @@ $(document).ready(function()
 	        $('#more-info-image').removeClass('hidden');
 	    }
 
+	    // Bottom of page
+	    if (document.body.scrollHeight == (document.body.scrollTop + window.innerHeight)) {
+        	
+        	// Show email subscription
+	    	if (!isLightboxShowing && !isSubscribed())
+	    	{
+				$('#email-subscription-toggle').click();
+				isLightboxShowing = true;
+
+				$('#submit-email').click(function(){
+					$.post("php/AddEmail.php", { email: $('#email-input').val() }).done(function(response) {
+						if(response.indexOf('True') != -1)
+						{
+							$('.lightbox-content h1').text("Thank you.");
+							$('.lightbox-content small').hide();
+							$('#email-input').hide();
+							$('#submit-email').hide();
+
+							setSubscribedCookie("true");
+						}
+					});
+				});
+	    	}
+
+    	}
 	});
-	
 });
 
 function loadMap(latitude, longitude)
@@ -162,11 +197,38 @@ function loadMap(latitude, longitude)
 	return new google.maps.Map(document.getElementById("map"), pgOptions);	
 }
 
+function isSubscribed()
+{
+	if (getSubscribedCookie() == "true")
+		return true;
+	else
+		return false;
+}
+
+function setSubscribedCookie(value)
+{
+	var date = new Date();
+	date.setDate(date.getDate() + 365);
+	var expires = "expires=" + date.toGMTString();
+	document.cookie = "Subscribed_Cookie" + "=" + value + "; " + expires;
+}
+
+function getSubscribedCookie()
+{
+	var name = "Subscribed_Cookie" + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0; i<ca.length; i++) {
+		  var c = ca[i].trim();
+		  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+	  }
+	return "";
+}
+
 function resetMenu()
 {
+	// Fixed chrome rendering issue
 	$('.top-bar').hide();
 	setTimeout(function(){
 		$('.top-bar').show();
 	}, 1);
-
 }

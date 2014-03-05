@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/lightbox.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -103,6 +104,20 @@
                 </p>
             </div>
         </section>
+
+        <a data-toggle="lightbox" id="email-subscription-toggle" href="#email-subscription" style="display:none;"></a>
+
+        <div id="email-subscription" class="lightbox fade" tabindex="-1" role="dialog" aria-hidden="true" style="display:none;">
+            <div class="lightbox-content">
+                <h1>
+                  Get Updates
+                </h1>
+                <small>Enter your email to be notified on release.</small>
+                <input type="email" id="email-input"></input>
+                <button type="button" class="button" id="submit-email">Submit</button>
+            </div>
+        </div>
+
         <footer>
             <ul class="social-slide">
                 <li class="twitter">
@@ -124,6 +139,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/lightbox.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
