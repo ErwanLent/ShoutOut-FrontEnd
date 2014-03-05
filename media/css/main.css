@@ -209,7 +209,6 @@ a
 {
     display: inline-block;
     font-size: 15px;
-    padding: 9px 10px;
     cursor: pointer;
     font-family: proxima_nova_rgregular;
 }
@@ -223,7 +222,8 @@ a
 
 .top-bar li a
 {
-    
+    display: inline-block;
+    padding: 9px 10px;
 }
 
 .intro
@@ -638,7 +638,7 @@ footer .large-logo:hover
 
 .grid ul li:hover
 {
-    border: 3px #34495e solid;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
 .grid img
@@ -755,7 +755,10 @@ footer .large-logo:hover
         display: block;
     }
 
-
+    .top-bar li a
+    {
+        width: 100%;
+    }
 
 }
 

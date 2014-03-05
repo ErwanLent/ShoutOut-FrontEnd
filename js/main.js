@@ -1,19 +1,6 @@
 $(document).ready(function() 
 {
 	/*=====================================================================================
-		Add Smooth Scrolling For Windows Webkit Users
-	=======================================================================================*/
-	if (navigator.userAgent.indexOf('Windows') != -1 && 
-		navigator.userAgent.indexOf('WebKit') != -1)
-	{
-		var smoothScrollingScript = document.createElement('script');
-		smoothScrollingScript.src = '/js/smoothscroll.js';
-
-		var firstScript = document.getElementsByTagName('script')[0];
-		firstScript.parentNode.insertBefore(smoothScrollingScript, firstScript);
-	}
-
-	/*=====================================================================================
 		About Scrolling Animation
 	=======================================================================================*/
 
@@ -151,7 +138,7 @@ $(document).ready(function()
 	    }
 
 	    // Bottom of page
-	    if (document.body.scrollHeight == (document.body.scrollTop + window.innerHeight)) {
+	    if (document.body.scrollHeight <= (document.body.scrollTop + window.innerHeight + 200)) {
 
 	    	setTimeout(function(){
 	    		// Show email subscription
