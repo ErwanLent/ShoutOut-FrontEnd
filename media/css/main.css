@@ -359,12 +359,12 @@ footer h1, footer h3
 .twitter
 {
     background-image: url('../img/social.png');
+    background-position-x: -105px; 
 }
 
 .facebook
 {
     background-image: url('../img/social.png');
-    background-position-x: -105px; 
 }
 
 .google
