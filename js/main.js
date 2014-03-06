@@ -121,6 +121,34 @@ $(document).ready(function()
 	var isFirstContentShowing = false;
 	var isSecondContentShowing = false;
 	var isLightboxShowing = false;
+	var isEmailControlsShowing = false;
+
+
+	// Close
+	$('.icon-cross').click(function(){
+		$('#email-subscription-toggle').click();
+
+		if (!isSubscribed())
+		{
+			// Show extra content in footer
+			if (!isEmailControlsShowing)
+			{
+				$('.email-controls').slideToggle();
+				isEmailControlsShowing = true;
+			}
+			
+			// Scroll user to bottom of page
+			$("html, body").animate({ scrollTop: $(document).height() }, "slow");
+		}
+
+	});
+
+	// Allow users to open modal
+	$('footer .button').click(function() {
+		isLightboxShowing = true;
+		$('#email-subscription-toggle').click();
+		$('#email-input').focus();
+	});
 
 	$(window).scroll(function() {
 
@@ -147,6 +175,7 @@ $(document).ready(function()
 		    		// Show dialog
 					$('#email-subscription-toggle').click();
 					isLightboxShowing = true;
+					$('#email-input').focus();
 
 					// On enter
 					$('#email-input').keypress(function (event) {
@@ -155,10 +184,7 @@ $(document).ready(function()
 						}
 					});
 
-					// Close
-					$('.icon-cross').click(function(){
-						$('#email-subscription-toggle').click();
-					});
+					var isErrorShowing = false;
 
 					$('#submit-email').click(function(){
 
@@ -167,6 +193,12 @@ $(document).ready(function()
 						if (email.length <= 0 || !checkEmail(email))
 						{
 							$('.error').html("Please enter in a valid email.");
+
+							if (!isErrorShowing)
+							{
+								$('.error').slideToggle();
+								isErrorShowing = true;
+							}
 						}
 						else
 						{
@@ -189,11 +221,22 @@ $(document).ready(function()
 
 										$('.lightbox-content h1').fadeIn();
 									});
+
+									if (isEmailControlsShowing)
+									{
+										$('.email-controls').slideToggle();
+										isEmailControlsShowing = false;
+									}
 								}
 								else
 								{
 									$('.error').append("An error occurred while adding your email.");
-								}
+
+									if (!isErrorShowing)
+									{
+										$('.error').slideToggle();
+										isErrorShowing = true;
+									}								}
 							});
 						}
 					});
