@@ -57,10 +57,13 @@ $(document).ready(function()
 		Load Map With Santa Barbara Coordinates
 	=======================================================================================*/
 
-	var latitude = 34.4258;
-	var longitude = -119.7142;
+	if(!isIphone())
+	{
+		var latitude = 34.4258;
+		var longitude = -119.7142;
 
-	var map = loadMap(latitude, longitude);
+		var map = loadMap(latitude, longitude);
+	}
 
 	/*=====================================================================================
 		Hangle Logo And Map Animations
@@ -78,14 +81,17 @@ $(document).ready(function()
 		$('.intro-content h1').show();
 	}, 2000);
 
-	setInterval(function(){
-		// Reset longitude at end of map
-		if ((longitude + .1) >= 180)
-			longitude = -180;
+	if(!isIphone())
+	{
+		setInterval(function(){
+			// Reset longitude at end of map
+			if ((longitude + .1) >= 180)
+				longitude = -180;
 
-		longitude += .03;
-		map.setCenter(new google.maps.LatLng(latitude, longitude));
-	}, 10);
+			longitude += .03;
+			map.setCenter(new google.maps.LatLng(latitude, longitude));
+		}, 10);
+	}
 
 	
 	/*=====================================================================================
@@ -168,6 +174,11 @@ $(document).ready(function()
 	    // Bottom of page
 	    if (document.body.scrollHeight <= (document.body.scrollTop + window.innerHeight + 200)) {
 
+	    	var timeout = 1000;
+
+	    	if(isIphone())
+	    		timeout = 0;
+
 	    	setTimeout(function(){
 	    		// Show email subscription
 		    	if (!isLightboxShowing && !isSubscribed())
@@ -202,46 +213,34 @@ $(document).ready(function()
 						}
 						else
 						{
-							$.post("php/AddEmail.php", { email: email }).done(function(response) {
-								if(response.indexOf('True') != -1)
-								{
-									setSubscribedCookie("true");
+							$.post("php/AddEmail.php", { email: email });
+							
+							setSubscribedCookie("true");
 
-									$('.lightbox-content small').fadeOut();
-									$('#email-input').fadeOut();
-									$('#submit-email').fadeOut();
-									$('.lightbox-content h1').fadeOut(function(){
+							$('.lightbox-content small').fadeOut();
+							$('#email-input').fadeOut();
+							$('#submit-email').fadeOut();
+							$('.lightbox-content h1').fadeOut(function(){
 
-										$('.lightbox-content h1').text("Thank you.");
-										$('.lightbox-content h1').css('margin-top', '19%');
+								$('.lightbox-content h1').text("Thank you.");
+								$('.lightbox-content h1').css('margin-top', '19%');
 
-										$('.lightbox-content small').remove();
-										$('#email-input').remove();
-										$('#submit-email').remove();
+								$('.lightbox-content small').remove();
+								$('#email-input').remove();
+								$('#submit-email').remove();
 
-										$('.lightbox-content h1').fadeIn();
-									});
-
-									if (isEmailControlsShowing)
-									{
-										$('.email-controls').slideToggle();
-										isEmailControlsShowing = false;
-									}
-								}
-								else
-								{
-									$('.error').append("An error occurred while adding your email.");
-
-									if (!isErrorShowing)
-									{
-										$('.error').slideToggle();
-										isErrorShowing = true;
-									}								}
+								$('.lightbox-content h1').fadeIn();
 							});
+
+							if (isEmailControlsShowing)
+							{
+								$('.email-controls').slideToggle();
+								isEmailControlsShowing = false;
+							}
 						}
 					});
 		    	}
-	    	}, 1000);
+	    	}, timeout);
 
     	}
 	});
@@ -310,4 +309,12 @@ function checkEmail(email)
     	return false;
 	else
 		return true;
+}
+
+function isIphone()
+{
+	if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) 
+		return true;
+	else
+		return false;
 }
