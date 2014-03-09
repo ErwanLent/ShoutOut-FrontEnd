@@ -10,48 +10,6 @@ $(document).ready(function()
 			}, 700, 'easeInOutQuad');
 		});
 
-	/*=====================================================================================
-		Responsive Hamburger Menu
-	=======================================================================================*/
-	var isShowing = false;
-	$('.icon-list').click(function(){
-		if (!isShowing)
-		{
-			$('.top-bar ul').css('float', 'none');
-			$('.top-bar ul').css('display', 'block');
-			$('.top-bar li').css('text-align', 'center');
-			$('.top-bar li').css('display', 'block');
-			isShowing = true;
-		}
-		else
-		{
-			$('.top-bar ul').removeAttr('style');
-			$('.top-bar li').removeAttr('style');
-			isShowing = false;
-
-			resetMenu();
-		}
-	});
-
-	// Close Menu On Item Click
-	$('.top-bar li a').click(function(){
-		$('.top-bar ul').removeAttr('style');
-		$('.top-bar li').removeAttr('style');
-		isShowing = false;
-
-		resetMenu();
-	});
-
-	$( window ).resize(function() {
-  		if (isShowing && $(window).width() > 450)
-  		{
-  			$('.top-bar ul').removeAttr('style');
-			$('.top-bar li').removeAttr('style');
-			isShowing = false;
-
-			resetMenu();
-  		}
-	});
 
 	/*=====================================================================================
 		Load Map With Santa Barbara Coordinates
@@ -102,6 +60,13 @@ $(document).ready(function()
 	var marginLeft = 145;
 	var state = "right";
 
+
+	if ($(window).width() <= 485)
+	{
+		marginLeft = 125;
+		marginRight = 60;
+	}
+
 	setInterval(function(){
 		switch(state)
 		{
@@ -119,6 +84,61 @@ $(document).ready(function()
 			 	break;
 		}
 	}, 1500);
+
+	/*=====================================================================================
+		Responsive Hamburger Menu
+	=======================================================================================*/
+	var isShowing = false;
+	$('.icon-list').click(function(){
+		if (!isShowing)
+		{
+			$('.top-bar ul').css('float', 'none');
+			$('.top-bar ul').css('display', 'block');
+			$('.top-bar li').css('text-align', 'center');
+			$('.top-bar li').css('display', 'block');
+			isShowing = true;
+		}
+		else
+		{
+			$('.top-bar ul').removeAttr('style');
+			$('.top-bar li').removeAttr('style');
+			isShowing = false;
+
+			resetMenu();
+		}
+	});
+
+	// Close Menu On Item Click
+	$('.top-bar li a').click(function(){
+		$('.top-bar ul').removeAttr('style');
+		$('.top-bar li').removeAttr('style');
+		isShowing = false;
+
+		resetMenu();
+	});
+
+	$( window ).resize(function() {
+
+		if ($(window).width() <= 485)
+		{
+			marginLeft = 125;
+			marginRight = 60;
+		}
+		else
+		{
+			var marginRight = 72;
+			var marginLeft = 145;
+		}
+
+  		if (isShowing && $(window).width() > 450)
+  		{
+  			$('.top-bar ul').removeAttr('style');
+			$('.top-bar li').removeAttr('style');
+			isShowing = false;
+
+			resetMenu();
+  		}
+	});
 
 	/*=====================================================================================
 		Handle Content Animations Based On Scroll Location
@@ -144,7 +164,8 @@ $(document).ready(function()
 			}
 			
 			// Scroll user to bottom of page
-			$("html, body").animate({ scrollTop: $(document).height() }, "slow");
+			if (!isIphone())
+				$("html, body").animate({ scrollTop: $(document).height() }, "slow");
 		}
 
 	});
@@ -153,7 +174,10 @@ $(document).ready(function()
 	$('footer .button').click(function() {
 		isLightboxShowing = true;
 		$('#email-subscription-toggle').click();
-		$('#email-input').focus();
+
+		// Focus on textbox
+		if(!isIphone())
+			$('#email-input').focus();
 	});
 
 	$(window).scroll(function() {
@@ -171,8 +195,13 @@ $(document).ready(function()
 	        $('#more-info-image').removeClass('hidden');
 	    }
 
+	    var distanceFromBottom = 200;
+
+	    if (isIphone())
+	    	distanceFromBottom = 600;
+
 	    // Bottom of page
-	    if (document.body.scrollHeight <= (document.body.scrollTop + window.innerHeight + 200)) {
+	    if (document.body.scrollHeight <= (document.body.scrollTop + window.innerHeight + distanceFromBottom)) {
 
 	    	var timeout = 1000;
 
@@ -214,7 +243,7 @@ $(document).ready(function()
 						else
 						{
 							$.post("php/AddEmail.php", { email: email });
-							
+
 							setSubscribedCookie("true");
 
 							$('.lightbox-content small').fadeOut();
