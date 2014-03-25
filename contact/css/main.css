@@ -27,45 +27,16 @@
 
 }
 
-@font-face {
-    font-family: 'Mono Social Icons Font';
-    src: url('/fonts/MonoSocialIconsFont-1.10.eot');
-    src: url('/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg'),
-         url('/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
-         url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-    src: url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.symbol, a.symbol:before {
-    font-family: 'Mono Social Icons Font';
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    -ms-text-rendering: optimizeLegibility;
-    -o-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-}
-
-a.symbol:before {
-    content: attr(title);
-    font-size: 130%;
-}
-
-
-.icon-list 
-{
+[class*="icon-"] {
     display: inline-block;
     width: 32px;
     height: 32px;
     background-image: url('/img/menu.svg');
     background-repeat: no-repeat;
+}
+
+.icon-list 
+{
     background-position: 0 0;
     width: 32px;
     float: right;
@@ -74,21 +45,6 @@ a.symbol:before {
     cursor: pointer;
     display: none;
 }
-
-.icon-cross 
-{
-    display: inline;
-    height: 32px;
-    background-image: url('/img/cross.svg');
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 32px;
-    margin: 5px;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
-
 
 
 /* ==========================================================================
@@ -354,7 +310,6 @@ footer
 
 footer h1, footer h3
 {
-    font-family: proxima_nova_rgbold;
     margin: 0;
     padding: 0;
 }
@@ -365,62 +320,6 @@ footer h1, footer h3
     margin: 0;
     padding: 20px;
     font-family: proxima_nova_rgbold;
-}
-
-.social-links
-{
-    margin: 0;
-    padding: 0;
-    padding: 20px;
-}
-
-.social-links li
-{
-    display: inline-block;
-    margin: 20px;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    -ms-transition: all ease 0.3s;
-    transition: all ease 0.3s;
-}
-
-.social-links li a
-{
-    display: inline-block;
-    font-size: 50px;
-}
-
-.social-links li:hover 
-{
-    color: #34495e;
-}
-
-.share-us
-{
-    padding-top: 10px;
-    font-family: proxima_nova_rgregular;
-    font-size: 40px;
-}
-
-footer .button
-{
-    margin-top: 7px;
-    display: inline;
-    background-color: #34495e;
-}
-
-footer .button:hover
-{
-    background-color: white;
-    color: #34495e;
-}
-
-footer small
-{
-    padding-top: 15px;
-    display: block;
-    font-family: proxima_nova_rgregular;
 }
 
 .social-slide
@@ -474,17 +373,23 @@ footer small
     background-position: -315px 0; 
 }
 
-.email-input
+footer .large-logo
 {
-    outline-width: 0;
-    font-family: proxima_nova_rgregular;
-    padding: 2px;
+    margin-bottom: 20px;
 }
 
-.email-input:focus
+
+footer .large-logo:hover
 {
-    outline-width: 0;
-    border:2px solid #34495e;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    -webkit-transform: rotate(360deg); 
+    -moz-transform: rotate(360deg); 
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg); 
 }
 
 .divider
@@ -687,80 +592,223 @@ footer small
     color: white;
 }
 
-.modal-backdrop 
+
+.media
 {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    background-color: #000;
-    opacity: .7;
+    max-width: 1024px;
+    margin: auto;
+    margin-top: 100px;
 }
 
-.lightbox-content
+.media h1
 {
-    background-color:white;
-    width:400px; 
-    min-height:200px;
-    border-radius: 0;
+    margin-top: 10px;
+    color: #e74c3c;
+    font: 35pt 'proxima_nova_rgbold';
+    text-align: center;
 }
 
-.lightbox
+.media p
 {
-    margin-top: 10%;
+    font-size: 18px;
     font-family: proxima_nova_rgregular;
+    margin: 20px;
+    text-align: center;
 }
 
-.lightbox-content h1
+.media a
 {
-    margin-bottom: 0;
+    color: #3498db;
 }
 
-.lightbox-content input
+.media a:hover
 {
-    margin-top: 8px;
-    padding: 5px;
+    color: rgba(255, 61, 51, 1);
+}
+
+.email-form
+{
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    display: block;
+    padding: 0 15px 0 15px;
+    margin-bottom: 100px;
+    min-height: 420px; 
+}
+
+.email-form input,  
+.email-form textarea,  
+.email-form button 
+{    
+    width: 94%;
+    display: block;     
+    margin: 15px 0 15px 0;     
     font-size: 14px;
     font-family: proxima_nova_rgregular;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
 }
 
-.lightbox-content input:focus
+.email-form input:focus, 
+.email-form textarea:focus
 {
     outline-width: 0;
     border:2px solid #FF3D33;
 }
 
-.button
+.email-form input, .email-form textarea
 {
-    outline-width: 0;
-    display: block;
-    margin: auto;
-    margin-top: 15px;
-    background-color: #ff3d33;
+    padding: 7px 10px;
+    background-image: url(../img/invalid-icon.png);
+    background-position: 98%;
+    background-repeat: no-repeat;
+    border: 2px rgb(169, 169, 169) solid;
+}
+
+.email-form input:valid, 
+.email-form textarea:valid
+{
+    border:2px solid #FF3D33;
+    background-image: url(../img/valid-icon.png);
+}
+
+.email-form textarea
+{
+    height: 200px;
+    background-position: 98% 8px;
+}
+
+#email-submit
+{
+    width: 99%;
+    background-color: rgba(255, 61, 51, 1);
     border: none;
     color: white;
-    padding: 5px 12px;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: proxima_nova_rgregular;
-    margin-bottom: 0;
-    border-radius: 3px;
-
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    -ms-transition: all ease 0.3s;
-    transition: all ease 0.3s;
+    letter-spacing: 1px;
+    height: 40px;
+    -moz-box-shadow: none;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
 }
 
-.error
+#email-submit:hover
 {
-    color: red;
-    display: block;
-    height: 18px;
+    border:2px solid #555;
+    background-color: #555;
 }
+
+.pin
+{
+    background: url('../img/pin.png') no-repeat center;
+    margin: auto; 
+    width: 150px;
+    height: 200px;
+    display: none;
+}
+
+.pin-container
+{
+    width: 150px;
+    height: 200px;
+    margin: auto;
+}
+
+.error-field
+{
+    text-align: center;
+    border: 1px solid #e74c3c;
+    padding: 7px;
+    display: none;
+}
+
+.sent
+{
+    display: none;
+    margin: auto;
+    background-image: url('../img/sent.gif');
+    width: 210px;
+    height: 255px;
+    background-repeat: no-repeat;
+    background-position-x: -45px;
+}
+
+
+/*
+==============================================
+hatch
+==============================================
+*/
+
+.hatch{
+    animation-name: hatch;
+    -webkit-animation-name: hatch;  
+
+    animation-duration: 2s; 
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;
+
+    transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%; 
+
+    visibility: visible !important;     
+}
+
+@keyframes hatch {
+    0% {
+        transform: rotate(0deg) scaleY(0.6);
+    }
+    20% {
+        transform: rotate(-2deg) scaleY(1.05);
+    }
+    35% {
+        transform: rotate(2deg) scaleY(1);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }   
+    65% {
+        transform: rotate(1deg);
+    }   
+    80% {
+        transform: rotate(-1deg);
+    }       
+    100% {
+        transform: rotate(0deg);
+    }                                   
+}
+
+@-webkit-keyframes hatch {
+    0% {
+        -webkit-transform: rotate(0deg) scaleY(0.6);
+    }
+    20% {
+        -webkit-transform: rotate(-2deg) scaleY(1.05);
+    }
+    35% {
+        -webkit-transform: rotate(2deg) scaleY(1);
+    }
+    50% {
+        -webkit-transform: rotate(-2deg);
+    }   
+    65% {
+        -webkit-transform: rotate(1deg);
+    }   
+    80% {
+        -webkit-transform: rotate(-1deg);
+    }       
+    100% {
+        -webkit-transform: rotate(0deg);
+    }       
+}
+
 
 
 /* ==========================================================================
@@ -887,21 +935,6 @@ footer small
 
 }
 
-@media screen and (max-width: 430px) {
-
-    .lightbox
-    {
-        width: 90%;
-        margin-right: 15px;
-    }
-    
-    .lightbox-content
-    {
-        width: 100%;
-    }
-
-}
-
 
 /* ==========================================================================
    Helper classes
@@ -931,7 +964,7 @@ footer small
  */
 
 .hidden {
-    display: none;
+    display: none !important;
     visibility: hidden;
 }
 

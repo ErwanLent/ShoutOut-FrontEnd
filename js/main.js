@@ -223,56 +223,66 @@ $(document).ready(function()
 							$('#submit-email').click();
 						}
 					});
-
-					var isErrorShowing = false;
-
-					$('#submit-email').click(function(){
-
-						var email = $('#email-input').val();
-
-						if (email.length <= 0 || !checkEmail(email))
-						{
-							$('.error').html("Please enter in a valid email.");
-
-							if (!isErrorShowing)
-							{
-								$('.error').slideToggle();
-								isErrorShowing = true;
-							}
-						}
-						else
-						{
-							$.post("php/AddEmail.php", { email: email });
-
-							setSubscribedCookie("true");
-
-							$('.lightbox-content small').fadeOut();
-							$('#email-input').fadeOut();
-							$('#submit-email').fadeOut();
-							$('.lightbox-content h1').fadeOut(function(){
-
-								$('.lightbox-content h1').text("Thank you.");
-								$('.lightbox-content h1').css('margin-top', '19%');
-
-								$('.lightbox-content small').remove();
-								$('#email-input').remove();
-								$('#submit-email').remove();
-
-								$('.lightbox-content h1').fadeIn();
-							});
-
-							if (isEmailControlsShowing)
-							{
-								$('.email-controls').slideToggle();
-								isEmailControlsShowing = false;
-							}
-						}
-					});
 		    	}
 	    	}, timeout);
-
     	}
 	});
+
+	var isErrorShowing = false;
+
+	$('#submit-email').click(function(){
+
+		var email = $('#email-input').val();
+
+		if (email.length <= 0 || !checkEmail(email))
+		{
+			$('.error').html("Please enter in a valid email.");
+
+			if (!isErrorShowing)
+			{
+				$('.error').slideToggle();
+				isErrorShowing = true;
+			}
+		}
+		else
+		{
+			$.post("php/AddEmail.php", { email: email });
+
+			setSubscribedCookie("true");
+
+			$('.lightbox-content small').fadeOut();
+			$('#email-input').fadeOut();
+			$('#submit-email').fadeOut();
+			$('.lightbox-content h1').fadeOut(function(){
+
+				$('.lightbox-content h1').text("Thank you.");
+				$('.lightbox-content h1').css('margin-top', '19%');
+
+				$('.lightbox-content small').remove();
+				$('#email-input').remove();
+				$('#submit-email').remove();
+
+				$('.lightbox-content h1').fadeIn();
+			});
+
+			if (isEmailControlsShowing)
+			{
+				$('.email-controls').slideToggle();
+				isEmailControlsShowing = false;
+			}
+		}
+	});
+
+	if (typeof InstallTrigger !== 'undefined' || (/*@cc_on!@*/false || !!document.documentMode))
+	{
+		// Show extra content in footer
+		if (!isEmailControlsShowing)
+		{
+			$('.email-controls').slideToggle();
+			isEmailControlsShowing = true;
+		}
+	}
+
 });
 
 function loadMap(latitude, longitude)

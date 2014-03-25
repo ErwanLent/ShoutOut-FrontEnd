@@ -359,7 +359,7 @@ footer h1, footer h3
 .twitter
 {
     background-image: url('../img/social.png');
-    background-position-x: -105px; 
+    background-position: -105px 0; 
 }
 
 .facebook
@@ -370,7 +370,7 @@ footer h1, footer h3
 .google
 {
     background-image: url('../img/social.png');
-    background-position-x: -315px; 
+    background-position: -315px 0; 
 }
 
 footer .large-logo
