@@ -6,14 +6,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ShoutOut - Location Based Chatting</title>
+        <title>ShoutOut - Location Based Chatrooms</title>
         <meta name="description" content="ShoutOut is a location based chatting app coming soon to iPhone, iPad, and Android. Users can create or join chatrooms based on their location.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0;">
+        <meta name="author" content="Erwan Lent">
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/lightbox.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/main.css">
+
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -38,7 +39,7 @@
                         <a href="/media">Media Assets</a>
                     </li>
                     <li>
-                        <a href="/contact" target="_blank">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -48,10 +49,6 @@
             <div class="intro-content">
                 <img src="img/large.png" class="large-logo animated slideInDown" alt="ShoutOut Logo">
                 <h1 class="animated flip">ShoutOut</h1>
-                <div style="display: none;" id="coming-soon">
-                        <h4 class="announcement">ShoutOut Is Coming Soon To iOS and Android.</h4>
-                        <i class="title-line"></i>
-                </div>
             </div>
             <div class="map-container">
                 <div id="map"></div>
@@ -71,7 +68,7 @@
             </div>
             <div class="hidden right-column animated fadeInRight">
                 <h2 class="content-header">
-                    Connect With <span>People<span>
+                    Location Based <span>Chatrooms<span>
                     <i class="title-line"></i>
                 </h2>
                 <p>
@@ -79,6 +76,7 @@
                 </p>
             </div>
         </section>
+
         <section class="section-separator">
             <div class="separator-overlay">
                 <div class="separator-content">
@@ -102,30 +100,20 @@
                     With ShoutOut, users can create chatrooms with a location and radius allowing anyone within range to join and start chatting. Want to find out where the best parties are? Need to find a study group for that exam coming up? Join a local chatroom and see what's going on.
                 </p>
             </div>
+        </section> 
+        <section class="section-separator">
+            <div class="separator-overlay">
+                <div class="separator-content">
+                    <h2 class="separator-header">
+                        Chat with people on campus, at concerts, and live events.
+                    </h2>
+                    <i class="title-line"></i>
+                </div>
+            </div>
         </section>
-
-        <a data-toggle="lightbox" id="email-subscription-toggle" href="#email-subscription" style="display:none;"></a>
-
-        <div id="email-subscription" class="lightbox fade" tabindex="-1" role="dialog" aria-hidden="true" style="display:none;">
-            <div class="lightbox-content">
-                <span class="icon-cross"></span>
-                <h1>
-                  Coming Soon
-                </h1>
-                <small>Enter your email to be notified on release.</small>
-                <small class="error" style="display: none;"></small>
-                <input type="email" id="email-input" spellcheck="false"></input>
-                <button type="button" class="button" id="submit-email">Get The App</button>
-            </div>
-        </div>
-
+        <section class="download-app">
+        </section>
         <footer>
-            <div class="email-controls" style="display: none;">
-                <h1 class="share-us">Coming Soon</h1>
-                <!-- <small>Enter your email to be notified on release.</small> -->
-                <!-- <input type="email" class="email-input"></input> -->
-                <button type="button" class="button">Get The App</button>
-            </div>
             <ul class="social-slide">
                 <li class="twitter">
                     <a href="https://twitter.com/getshoutoutapp" target="_blank"></a>
@@ -143,7 +131,6 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/lightbox.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

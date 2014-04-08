@@ -27,45 +27,16 @@
 
 }
 
-@font-face {
-    font-family: 'Mono Social Icons Font';
-    src: url('/fonts/MonoSocialIconsFont-1.10.eot');
-    src: url('/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg'),
-         url('/fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
-         url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-    src: url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.symbol, a.symbol:before {
-    font-family: 'Mono Social Icons Font';
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    -ms-text-rendering: optimizeLegibility;
-    -o-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-}
-
-a.symbol:before {
-    content: attr(title);
-    font-size: 130%;
-}
-
-
-.icon-list 
-{
+[class*="icon-"] {
     display: inline-block;
     width: 32px;
     height: 32px;
     background-image: url('/img/menu.svg');
     background-repeat: no-repeat;
+}
+
+.icon-list 
+{
     background-position: 0 0;
     width: 32px;
     float: right;
@@ -74,21 +45,6 @@ a.symbol:before {
     cursor: pointer;
     display: none;
 }
-
-.icon-cross 
-{
-    display: inline;
-    height: 32px;
-    background-image: url('/img/cross.svg');
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 32px;
-    margin: 5px;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
-
 
 
 /* ==========================================================================
@@ -354,7 +310,6 @@ footer
 
 footer h1, footer h3
 {
-    font-family: proxima_nova_rgbold;
     margin: 0;
     padding: 0;
 }
@@ -365,62 +320,6 @@ footer h1, footer h3
     margin: 0;
     padding: 20px;
     font-family: proxima_nova_rgbold;
-}
-
-.social-links
-{
-    margin: 0;
-    padding: 0;
-    padding: 20px;
-}
-
-.social-links li
-{
-    display: inline-block;
-    margin: 20px;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    -ms-transition: all ease 0.3s;
-    transition: all ease 0.3s;
-}
-
-.social-links li a
-{
-    display: inline-block;
-    font-size: 50px;
-}
-
-.social-links li:hover 
-{
-    color: #34495e;
-}
-
-.share-us
-{
-    padding-top: 10px;
-    font-family: proxima_nova_rgregular;
-    font-size: 40px;
-}
-
-footer .button
-{
-    margin-top: 7px;
-    display: inline;
-    background-color: #34495e;
-}
-
-footer .button:hover
-{
-    background-color: white;
-    color: #34495e;
-}
-
-footer small
-{
-    padding-top: 15px;
-    display: block;
-    font-family: proxima_nova_rgregular;
 }
 
 .social-slide
@@ -446,45 +345,25 @@ footer small
 
 .social-slide li a
 {
-    width: 100%;
-    height: 100%;
-    display: block;
+    width: 100
+
+footer .large-logo
+{
+    margin-bottom: 20px;
 }
 
-.social-slide li:hover 
-{
-    background-position-y: -105px;
-    box-shadow: 0px 0px 5px 1px rgba(255,255,255,0.4);
-}
 
-.twitter
+footer .large-logo:hover
 {
-    background-image: url('../img/social.png');
-    background-position: -105px 0; 
-}
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 
-.facebook
-{
-    background-image: url('../img/social.png');
-}
-
-.google
-{
-    background-image: url('../img/social.png');
-    background-position: -315px 0; 
-}
-
-.email-input
-{
-    outline-width: 0;
-    font-family: proxima_nova_rgregular;
-    padding: 2px;
-}
-
-.email-input:focus
-{
-    outline-width: 0;
-    border:2px solid #34495e;
+    -webkit-transform: rotate(360deg); 
+    -moz-transform: rotate(360deg); 
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg); 
 }
 
 .divider
@@ -687,90 +566,82 @@ footer small
     color: white;
 }
 
-.modal-backdrop 
-{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    background-color: #000;
-    opacity: .7;
-}
 
-.lightbox-content
+.media
 {
-    background-color:white;
-    width:400px; 
-    min-height:200px;
-    border-radius: 0;
-}
-
-.lightbox
-{
-    margin-top: 10%;
-    font-family: proxima_nova_rgregular;
-}
-
-.lightbox-content h1
-{
-    margin-bottom: 0;
-}
-
-.lightbox-content input
-{
-    margin-top: 8px;
-    padding: 5px;
-    font-size: 14px;
-    font-family: proxima_nova_rgregular;
-}
-
-.lightbox-content input:focus
-{
-    outline-width: 0;
-    border:2px solid #FF3D33;
-}
-
-.button
-{
-    outline-width: 0;
-    display: block;
-    margin: auto;
-    margin-top: 15px;
-    background-color: #ff3d33;
-    border: none;
-    color: white;
-    padding: 5px 12px;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: proxima_nova_rgregular;
-    margin-bottom: 0;
-    border-radius: 3px;
-
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
-    -ms-transition: all ease 0.3s;
-    transition: all ease 0.3s;
-}
-
-.error
-{
-    color: red;
-    display: block;
-    height: 18px;
-}
-
-.download-app
-{
-    width: 100%;
     max-width: 1024px;
-    min-height: 758px;
     margin: auto;
-    text-align: right;
-    overflow: hidden;
 }
+
+.media h1
+{
+    margin-top: 100px;
+    color: #e74c3c;
+    font: 35pt 'proxima_nova_rgbold';
+    text-align: center;
+}
+
+.media p
+{
+    font-size: 18px;
+    font-family: proxima_nova_rgregular;
+    margin: 20px;
+}
+
+.grid
+{
+    max-width: 1024px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.grid ul
+{
+    list-style: none;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.grid ul li
+{
+    display: inline-block;
+    margin: 10px;
+}
+
+.grid ul li:hover
+{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+.grid img
+{
+    width: 300px;
+}
+
+.download
+{
+    margin: 20px;
+    background-color: #e74c3c;
+    border: none;
+    color: #ecf0f1;
+    font-size: 20px;
+    margin-bottom: 50px;
+    padding: 10px 15px;
+    border-top: 3px #c0392b solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: proxima_nova_rgregular;
+}
+
+.center
+{
+    text-align: center;
+}
+
 
 /* ==========================================================================
    Media Queries
@@ -896,21 +767,6 @@ footer small
 
 }
 
-@media screen and (max-width: 430px) {
-
-    .lightbox
-    {
-        width: 90%;
-        margin-right: 15px;
-    }
-    
-    .lightbox-content
-    {
-        width: 100%;
-    }
-
-}
-
 
 /* ==========================================================================
    Helper classes
@@ -940,7 +796,7 @@ footer small
  */
 
 .hidden {
-    display: none;
+    display: none !important;
     visibility: hidden;
 }
 

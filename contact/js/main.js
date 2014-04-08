@@ -63,7 +63,7 @@ $(document).ready(function()
 		}
 		else
 		{
-			$.post("php/ContactUs.php", { name: name,  email: email, message: message });
+			$.post("/php/ContactUs.php", { name: name,  email: email, message: message });
 			$('.form').slideToggle('slow', function(){
 				$('.sent').show();
 				$('.contents').hide();

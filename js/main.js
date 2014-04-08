@@ -32,12 +32,16 @@ $(document).ready(function()
 	setTimeout(function() {
 		$('.bar-logo').removeClass("duration");
 		$('.bar-logo').removeClass("rotate");
-		$('#coming-soon').fadeIn('slow');
 	}, 1000);
 
 	setTimeout(function() {
 		$('.intro-content h1').show();
 	}, 2000);
+
+	setTimeout(function() {
+		$('.animation-container').removeClass('hidden');
+	    $('.right-column').removeClass('hidden');
+	}, 700);
 
 	if(!isIphone())
 	{
@@ -143,145 +147,17 @@ $(document).ready(function()
 	/*=====================================================================================
 		Handle Content Animations Based On Scroll Location
 	=======================================================================================*/
-	
-	var isFirstContentShowing = false;
-	var isSecondContentShowing = false;
-	var isLightboxShowing = false;
-	var isEmailControlsShowing = false;
-
-
-	// Close
-	$('.icon-cross').click(function(){
-		$('#email-subscription-toggle').click();
-
-		if (!isSubscribed())
-		{
-			// Show extra content in footer
-			if (!isEmailControlsShowing)
-			{
-				$('.email-controls').slideToggle();
-				isEmailControlsShowing = true;
-			}
-			
-			// Scroll user to bottom of page
-			if (!isIphone())
-				$("html, body").animate({ scrollTop: $(document).height() }, "slow");
-		}
-
-	});
-
-	// Allow users to open modal
-	$('footer .button').click(function() {
-		isLightboxShowing = true;
-		$('#email-subscription-toggle').click();
-
-		// Focus on textbox
-		if(!isIphone())
-			$('#email-input').focus();
-	});
+	var isSecondSectionShowing = false;
 
 	$(window).scroll(function() {
 
 	    var height = $(window).scrollTop();
 
-	    if(!isFirstContentShowing && height  > 100) {
-	    	isFirstContentShowing = true;
-	        $('.animation-container').removeClass('hidden');
-	        $('.right-column').removeClass('hidden');
-	    }
-
-	    if(!isSecondContentShowing && height  > 900) {
-	    	isSecondContentShowing = true;
+	    if(!isSecondSectionShowing && height  > 900) {
+	    	isSecondSectionShowing = true;
 	        $('#more-info-image').removeClass('hidden');
 	    }
-
-	    var distanceFromBottom = 200;
-
-	    if (isIphone())
-	    	distanceFromBottom = 600;
-
-	    // Bottom of page
-	    if (document.body.scrollHeight <= (document.body.scrollTop + window.innerHeight + distanceFromBottom)) {
-
-	    	var timeout = 1000;
-
-	    	if(isIphone())
-	    		timeout = 0;
-
-	    	setTimeout(function(){
-	    		// Show email subscription
-		    	if (!isLightboxShowing && !isSubscribed())
-		    	{
-		    		// Show dialog
-					$('#email-subscription-toggle').click();
-					isLightboxShowing = true;
-					$('#email-input').focus();
-
-					// On enter
-					$('#email-input').keypress(function (event) {
-						if (event.which == 13) {
-							$('#submit-email').click();
-						}
-					});
-		    	}
-	    	}, timeout);
-    	}
 	});
-
-	var isErrorShowing = false;
-
-	$('#submit-email').click(function(){
-
-		var email = $('#email-input').val();
-
-		if (email.length <= 0 || !checkEmail(email))
-		{
-			$('.error').html("Please enter in a valid email.");
-
-			if (!isErrorShowing)
-			{
-				$('.error').slideToggle();
-				isErrorShowing = true;
-			}
-		}
-		else
-		{
-			$.post("php/AddEmail.php", { email: email });
-
-			setSubscribedCookie("true");
-
-			$('.lightbox-content small').fadeOut();
-			$('#email-input').fadeOut();
-			$('#submit-email').fadeOut();
-			$('.lightbox-content h1').fadeOut(function(){
-
-				$('.lightbox-content h1').text("Thank you.");
-				$('.lightbox-content h1').css('margin-top', '19%');
-
-				$('.lightbox-content small').remove();
-				$('#email-input').remove();
-				$('#submit-email').remove();
-
-				$('.lightbox-content h1').fadeIn();
-			});
-
-			if (isEmailControlsShowing)
-			{
-				$('.email-controls').slideToggle();
-				isEmailControlsShowing = false;
-			}
-		}
-	});
-
-	if (typeof InstallTrigger !== 'undefined' || (/*@cc_on!@*/false || !!document.documentMode))
-	{
-		// Show extra content in footer
-		if (!isEmailControlsShowing)
-		{
-			$('.email-controls').slideToggle();
-			isEmailControlsShowing = true;
-		}
-	}
 
 });
 
