@@ -1,14 +1,14 @@
 $(document).ready(function() 
 {
 	/*=====================================================================================
-		About Scrolling Animation
+		Scrolling Animation
 	=======================================================================================*/
 
-		$('#about').click(function() {
-			$('html, body').stop().animate({
-				scrollTop: $('.about').offset().top - 50
-			}, 700, 'easeInOutQuad');
-		});
+	$('#bottom-anchor').click(function() {
+		$('html, body').stop().animate({
+			scrollTop: $(document).height() - $(window).height()
+		}, 1400, 'easeInOutCubic');
+	});
 
 
 	/*=====================================================================================
@@ -100,11 +100,11 @@ $(document).ready(function()
 
 		if (degreeRotation >= 360)
 		{
-			degreeRotation = -1;
+			degreeRotation = -2;
 		}
 
-		degreeRotation++;
-	}, 25);
+		degreeRotation += 2;
+	}, 30);
 
 	/*=====================================================================================
 		Email Subscription
