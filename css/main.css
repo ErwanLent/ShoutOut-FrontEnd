@@ -272,7 +272,7 @@ a
 
 .intro
 {
-    height: 650px;
+    height: 550px;
     text-align: center; 
 }
 
@@ -286,18 +286,33 @@ a
 .map-container
 {
     width: 100%;
-    height: 650px; 
+    height: 550px; 
     overflow: hidden;
 }
 
 .color-overlay
 {
     width: 100%;
-    height: 650px;
+    height: 550px;
     background-color: rgba(255, 61, 51, 0.85);
     z-index: 100;
     float: left;
     position: absolute;
+
+/*    background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #FF5E3A),
+    color-stop(1, #FF2A66)
+    );
+    background-image: -o-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
+    background-image: -moz-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
+    background-image: -webkit-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
+    background-image: -ms-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
+    background-image: linear-gradient(to bottom, #FF5E3A 0%, #FF2A66 100%);
+
+    opacity: 1;*/
 }
 
 .bar-logo:hover 
@@ -330,7 +345,7 @@ a
 {
     position: absolute;
     z-index: 100;
-    margin-top: 184px;
+    margin-top: 155px;
     margin-left: auto;
     margin-right: auto;
     left:0;
@@ -343,20 +358,6 @@ a
     color:white;
     font-family: proxima_nova_rgbold;
     font-size: 75px;
-}
-
-footer
-{
-    background-color: rgba(255, 61, 51, 1);
-    text-align: center;
-    color: #ecf0f1;
-}
-
-footer h1, footer h3
-{
-    font-family: proxima_nova_rgbold;
-    margin: 0;
-    padding: 0;
 }
 
 .connect-header
@@ -401,26 +402,6 @@ footer h1, footer h3
     padding-top: 10px;
     font-family: proxima_nova_rgregular;
     font-size: 40px;
-}
-
-footer .button
-{
-    margin-top: 7px;
-    display: inline;
-    background-color: #34495e;
-}
-
-footer .button:hover
-{
-    background-color: white;
-    color: #34495e;
-}
-
-footer small
-{
-    padding-top: 15px;
-    display: block;
-    font-family: proxima_nova_rgregular;
 }
 
 .social-slide
@@ -589,7 +570,14 @@ footer small
 {
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 61, 51, 0.65);
+    background: -moz-linear-gradient(top,  rgba(255,94,58,0.6) 0%, rgba(255,42,104,0.6) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,94,58,0.6)), color-stop(100%,rgba(255,42,104,0.6))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ff5e3a', endColorstr='#99ff2a68',GradientType=0 ); /* IE6-9 */
+
 }
 
 .title-line 
@@ -757,19 +745,122 @@ footer small
 
 .error
 {
-    color: red;
+    color: white;
     display: block;
-    height: 18px;
+    padding-top: 10px;
+    font-family: proxima_nova_rgregular;
+    font-size: 18px;
 }
 
 .download-app
 {
     width: 100%;
+    min-height: 350px;
+    text-align: center;
+    color: white;
+    background: #2e2f41 url(../img/footer.png) no-repeat;
+    background-position: 0 -200px;
+    background-size: cover;
+}
+
+.subscribe-section
+{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
     max-width: 1024px;
-    min-height: 758px;
     margin: auto;
-    text-align: right;
-    overflow: hidden;
+}
+
+.subscribe-section h2
+{
+    font-family: proxima_nova_rgregular;
+    font-size: 32px;
+}
+
+.subscriber-email
+{
+    font-family: proxima_nova_rgregular;
+    width: 300px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 8px 12px;
+    font-size: 17px;
+    line-height: 1.42857;
+    color: #696f6f; 
+    background-color: white;
+    background-image: none;
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    height: 26px;
+    margin-right: 3px;
+}
+
+.subscriber-email:focus 
+{
+    border-color: #FF3D33;
+    border-color: #00b6ad;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.subscriber-email::-moz-placeholder 
+{
+  color: #636f70;
+  opacity: 1;
+}
+.subscriber-email:-ms-input-placeholder 
+{
+  color: #636f70;
+}
+.subscriber-email::-webkit-input-placeholder 
+{
+  color: #636f70;
+}
+.subscriber-email[disabled], .subscriber-email[readonly], fieldset[disabled] .subscriber-email 
+{
+  cursor: not-allowed;
+  background-color: #f3f4f5;
+  opacity: 1;
+}
+
+.email-button
+{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 0;
+    white-space: nowrap;
+    padding: 10px 23px;
+    font-size: 18px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: white;
+    border-color: #009d95;
+    background-color: #FF3D33;
+    outline: 0;
+}
+
+.email-button:hover
+{
+    background-color: #00837d;
+    border-color: #005f5b;
 }
 
 /* ==========================================================================

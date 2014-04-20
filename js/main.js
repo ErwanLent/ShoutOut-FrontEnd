@@ -57,7 +57,7 @@ $(document).ready(function()
 
 	
 	/*=====================================================================================
-		Hangle iPhone Chatroom Sliding Animation
+		Handle iPhone Chatroom Sliding Animation
 	=======================================================================================*/
 
 	var marginRight = 72;
@@ -88,6 +88,46 @@ $(document).ready(function()
 			 	break;
 		}
 	}, 1500);
+
+	/*=====================================================================================
+		Button Color Changer
+	=======================================================================================*/
+
+	var degreeRotation = 0;
+	setInterval(function(){
+		var hueCss = 'hue-rotate('+ degreeRotation +'deg)';
+		$('.email-button').css('-webkit-filter', hueCss);
+
+		if (degreeRotation >= 360)
+		{
+			degreeRotation = -1;
+		}
+
+		degreeRotation++;
+	}, 25);
+
+	/*=====================================================================================
+		Email Subscription
+	=======================================================================================*/
+
+
+	// Subscribe button
+	$('.email-button').click(function() {
+
+		var email = $('.subscriber-email').val();
+
+		if (isValidEmail(email))
+		{
+			$('.error').fadeOut();
+			$.post("php/AddEmail.php", { email: email });
+			toggleEmailThankYou();
+		}
+		else
+		{
+			$('.error').html("Please enter in a valid email.");
+			$('.error').fadeIn();
+		}
+	});
 
 	/*=====================================================================================
 		Responsive Hamburger Menu
@@ -207,6 +247,34 @@ function getSubscribedCookie()
 	return "";
 }
 
+function toggleEmailThankYou()
+{
+	// Clear email
+	$('.subscriber-email').val(undefined);
+
+	var currentValue = $('.subscribe-section h2').html();
+
+	// Animate message
+	$('.subscribe-section h2').fadeOut(function() {
+
+		if (currentValue.indexOf('ShoutOut') != -1)
+		{
+			$(this).html('Thank you.');
+		}
+		else if (currentValue.indexOf('Again') == -1)
+		{
+			$(this).html(currentValue + ' Again.');
+		}
+		else
+		{
+			$(this).html(currentValue + ' And Again.');
+		}
+
+		// Show new message
+		$(this).fadeIn();
+	});
+}
+
 function resetMenu()
 {
 	// Fixed chrome rendering issue
@@ -216,7 +284,7 @@ function resetMenu()
 	}, 1);
 }
 
-function checkEmail(email) 
+function isValidEmail(email) 
 {
     var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
