@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       scripts: {
-        files: [ 'js/*.js', 'css/*.css' ],
+        files: [ '/js/*.js', 'css/*.css' ],
         tasks: ['default'],
       },
     },
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       },
       build: {
         expand: true,
-        src: ['js/*.js', '!*.min.js'],
+        src: ['/js/*.js', '!*.min.js'],
         dest: '',
         ext: '.min.js'
       }
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     cssmin: {
       minify: {
         expand: true,
-        cwd: 'css/',
+        cwd: '/css/',
         src: ['*.css', '!*.min.css'],
         dest: 'css/',
         ext: '.min.css'
@@ -31,8 +31,8 @@ module.exports = function(grunt) {
     },
     uncss: {
     dist: {
-      src: ['index.html'],
-      dest: 'css/tidy.css'
+      src: ['index.html', 'media.html', 'contact.html'],
+      dest: '/css/tidy.css'
       }
     }
   });

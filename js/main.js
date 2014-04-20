@@ -220,33 +220,6 @@ function loadMap(latitude, longitude)
 	return new google.maps.Map(document.getElementById("map"), pgOptions);	
 }
 
-function isSubscribed()
-{
-	if (getSubscribedCookie() == "true")
-		return true;
-	else
-		return false;
-}
-
-function setSubscribedCookie(value)
-{
-	var date = new Date();
-	date.setDate(date.getDate() + 365);
-	var expires = "expires=" + date.toGMTString();
-	document.cookie = "Subscribed_Cookie" + "=" + value + "; " + expires;
-}
-
-function getSubscribedCookie()
-{
-	var name = "Subscribed_Cookie" + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0; i<ca.length; i++) {
-		  var c = ca[i].trim();
-		  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-	  }
-	return "";
-}
-
 function toggleEmailThankYou()
 {
 	// Clear email
