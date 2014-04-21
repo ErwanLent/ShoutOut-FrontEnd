@@ -2,13 +2,16 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+
     watch: {
       scripts: {
         files: [ '/js/*.js', 'css/*.css' ],
         tasks: ['default'],
       },
     },
+
     uglify: {
       options: {
         banner: '/*! Last Modified: <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -20,6 +23,7 @@ module.exports = function(grunt) {
         ext: '.min.js'
       }
     },
+
     cssmin: {
       minify: {
         expand: true,
@@ -29,12 +33,17 @@ module.exports = function(grunt) {
         ext: '.min.css'
       }
     },
+
     uncss: {
-    dist: {
-      src: ['index.html', 'media.html', 'contact.html'],
-      dest: '/css/tidy.css'
+      dist: {
+        src: ['index.html', 'media.html', 'contact.html'],
+        dest: '/css/tidy.css'
+      },
+      options: {
+          ignore: ['.gradient']
       }
     }
+
   });
 
   // Watch for changes

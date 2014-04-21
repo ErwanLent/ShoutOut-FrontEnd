@@ -15,12 +15,19 @@ $(document).ready(function()
 		Load Map With Santa Barbara Coordinates
 	=======================================================================================*/
 
-	if(!isIphone())
+	var isMapLoaded = false;
+
+	if(!isIphone() && $(window).width() > 730)
 	{
 		var latitude = 34.4258;
 		var longitude = -119.7142;
 
 		var map = loadMap(latitude, longitude);
+		isMapLoaded = true;
+	}
+	else
+	{
+		$('.gradient').removeClass('color-overlay');
 	}
 
 	/*=====================================================================================
@@ -43,7 +50,7 @@ $(document).ready(function()
 	    $('.right-column').removeClass('hidden');
 	}, 700);
 
-	if(!isIphone())
+	if(isMapLoaded)
 	{
 		setInterval(function(){
 			// Reset longitude at end of map
@@ -53,6 +60,11 @@ $(document).ready(function()
 			longitude += .03;
 			map.setCenter(new google.maps.LatLng(latitude, longitude));
 		}, 10);
+	}
+
+	if (isIphone())
+	{
+		$('.section-separator').css('background-size', '700px');
 	}
 
 	
@@ -134,33 +146,39 @@ $(document).ready(function()
 	/*=====================================================================================
 		Responsive Hamburger Menu
 	=======================================================================================*/
+
 	var isShowing = false;
+	
 	$('.icon-list').click(function(){
 		if (!isShowing)
 		{
 			$('.top-bar ul').css('float', 'none');
 			$('.top-bar ul').css('display', 'block');
 			$('.top-bar li').css('text-align', 'center');
-			$('.top-bar li').css('display', 'block');
+			$('.top-bar li').slideToggle();
 			isShowing = true;
 		}
 		else
 		{
-			$('.top-bar ul').removeAttr('style');
-			$('.top-bar li').removeAttr('style');
-			isShowing = false;
+			$('.top-bar li').slideToggle(function() {
+				$('.top-bar ul').removeAttr('style');
+				$('.top-bar li').removeAttr('style');
+				isShowing = false;
 
-			resetMenu();
+				resetMenu();
+			});
 		}
 	});
 
 	// Close Menu On Item Click
 	$('.top-bar li a').click(function(){
-		$('.top-bar ul').removeAttr('style');
-		$('.top-bar li').removeAttr('style');
-		isShowing = false;
+		$('.top-bar li').slideToggle(function() {
+			$('.top-bar ul').removeAttr('style');
+			$('.top-bar li').removeAttr('style');
+			isShowing = false;
 
-		resetMenu();
+			resetMenu();
+		});
 	});
 
 	$( window ).resize(function() {
@@ -178,11 +196,13 @@ $(document).ready(function()
 
   		if (isShowing && $(window).width() > 450)
   		{
-  			$('.top-bar ul').removeAttr('style');
-			$('.top-bar li').removeAttr('style');
-			isShowing = false;
+			$('.top-bar li').slideToggle(function() {
+				$('.top-bar ul').removeAttr('style');
+				$('.top-bar li').removeAttr('style');
+				isShowing = false;
 
-			resetMenu();
+				resetMenu();
+			});
   		}
 	});
 

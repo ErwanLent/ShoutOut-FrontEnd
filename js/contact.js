@@ -3,44 +3,63 @@ $(document).ready(function()
 	/*=====================================================================================
 		Responsive Hamburger Menu
 	=======================================================================================*/
-	
+
 	var isShowing = false;
+	
 	$('.icon-list').click(function(){
 		if (!isShowing)
 		{
 			$('.top-bar ul').css('float', 'none');
 			$('.top-bar ul').css('display', 'block');
 			$('.top-bar li').css('text-align', 'center');
-			$('.top-bar li').css('display', 'block');
+			$('.top-bar li').slideToggle();
 			isShowing = true;
 		}
 		else
 		{
-			$('.top-bar ul').removeAttr('style');
-			$('.top-bar li').removeAttr('style');
-			isShowing = false;
+			$('.top-bar li').slideToggle(function() {
+				$('.top-bar ul').removeAttr('style');
+				$('.top-bar li').removeAttr('style');
+				isShowing = false;
 
-			resetMenu();
+				resetMenu();
+			});
 		}
 	});
 
 	// Close Menu On Item Click
 	$('.top-bar li a').click(function(){
-		$('.top-bar ul').removeAttr('style');
-		$('.top-bar li').removeAttr('style');
-		isShowing = false;
-
-		resetMenu();
-	});
-
-	$( window ).resize(function() {
-  		if (isShowing && $(window).width() > 450)
-  		{
-  			$('.top-bar ul').removeAttr('style');
+		$('.top-bar li').slideToggle(function() {
+			$('.top-bar ul').removeAttr('style');
 			$('.top-bar li').removeAttr('style');
 			isShowing = false;
 
 			resetMenu();
+		});
+	});
+
+	$( window ).resize(function() {
+
+		if ($(window).width() <= 485)
+		{
+			marginLeft = 125;
+			marginRight = 60;
+		}
+		else
+		{
+			var marginRight = 72;
+			var marginLeft = 145;
+		}
+
+  		if (isShowing && $(window).width() > 450)
+  		{
+			$('.top-bar li').slideToggle(function() {
+				$('.top-bar ul').removeAttr('style');
+				$('.top-bar li').removeAttr('style');
+				isShowing = false;
+
+				resetMenu();
+			});
   		}
 	});
 
