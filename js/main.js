@@ -62,9 +62,11 @@ $(document).ready(function()
 		}, 10);
 	}
 
+	// iPhone Modifications
 	if (isIphone())
 	{
 		$('.section-separator').css('background-size', '700px');
+		$('.section-separator').css('background-attachment', 'inherit');
 	}
 
 	
@@ -148,7 +150,7 @@ $(document).ready(function()
 	=======================================================================================*/
 
 	var isShowing = false;
-	
+
 	$('.icon-list').click(function(){
 		if (!isShowing)
 		{
