@@ -1,6 +1,6 @@
-ShoutOut-FrontEnd
+ShoutOut Website Design
 =================
 
-This is the front-end site for ShoutOut. Site is live at http://getshoutout.me/
-
-![alt tag](http://i.imgur.com/bl19jrn.png)
++This is the promotional website for ShoutOut. Site is live at http://getshoutout.me/
+  
+![alt tag](http://i.imgur.com/GpwpYYb.jpg)
