@@ -111,6 +111,11 @@ html {
     -webkit-font-smoothing:antialiased;
 }
 
+body
+{
+    margin: 0;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -501,7 +506,7 @@ a
 .overlay-container
 {
     width: 100%;
-    max-width: 1024px;
+    max-width: 300px;
     margin: auto;
     position: absolute;
 }
@@ -781,7 +786,8 @@ a
 .subscriber-email
 {
     font-family: proxima_nova_rgregular;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     display: inline-block;
     vertical-align: middle;
     padding: 8px 12px;
@@ -1146,6 +1152,14 @@ Hatch Animation
    Media Queries
    ========================================================================== */
 
+@media screen and (max-width: 1000px) {
+    .download-app
+    {
+        background-size: initial;
+        background-position: -100px 0px;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .animation-container 
     {
@@ -1232,6 +1246,18 @@ Hatch Animation
 
 }
 
+@media screen and (max-width: 500px) {
+    .email-button
+    {
+        margin-top: 10px;
+    }
+
+    .subscriber-email
+    {
+        margin-left: 3px;
+    }
+}
+
 @media screen and (max-width: 485px) {
     .left-column p, .right-column p
     {
@@ -1277,7 +1303,25 @@ Hatch Animation
     {
         width: 100%;
     }
+}
 
+@media screen and (max-width: 410px) {
+    .content-header span
+    {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .download-app 
+    {
+        background-position: -280px -185px;
+    }
+
+    .subscriber-email
+    {
+        width: inherit;
+    }
 }
 
 

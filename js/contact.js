@@ -82,18 +82,21 @@ $(document).ready(function()
 		Button Color Changer
 	=======================================================================================*/
 
-	var degreeRotation = 0;
-	setInterval(function(){
-		var hueCss = 'hue-rotate('+ degreeRotation +'deg)';
-		$('.email-button').css('-webkit-filter', hueCss);
+	if (!isIphone())
+	{
+		var degreeRotation = 0;
+		setInterval(function(){
+			var hueCss = 'hue-rotate('+ degreeRotation +'deg)';
+			$('.email-button').css('-webkit-filter', hueCss);
 
-		if (degreeRotation >= 360)
-		{
-			degreeRotation = -2;
-		}
+			if (degreeRotation >= 360)
+			{
+				degreeRotation = -2;
+			}
 
-		degreeRotation += 2;
-	}, 30);
+			degreeRotation += 2;
+		}, 30);
+	}
 
 	/*=====================================================================================
 		Email Subscription
@@ -184,4 +187,12 @@ function showMonkey()
 		$('.contents').hide();
 		$('.form').slideToggle();
 	});
+}
+
+function isIphone()
+{
+	if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) 
+		return true;
+	else
+		return false;
 }
