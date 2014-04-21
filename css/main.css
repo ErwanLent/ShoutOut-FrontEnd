@@ -1079,6 +1079,11 @@ a
     font-family: proxima_nova_rgregular;
 }
 
+.media .download:hover
+{
+    color: #ecf0f1;;
+}
+
 .center
 {
     text-align: center;
@@ -1323,7 +1328,7 @@ Hatch Animation
 @media screen and (max-width: 370px) {
     .download-app 
     {
-        background-position: -280px -185px;
+        background-position: -280px -150px;
     }
 
     .subscriber-email
