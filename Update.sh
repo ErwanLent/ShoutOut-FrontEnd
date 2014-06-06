@@ -7,11 +7,10 @@ mv * ..
 cd ..
 rmdir ShoutOut-FrontEnd-master
 cd /var/
-cp php.zip www/sites/getshoutout.me
 cd www/sites/getshoutout.me
 chmod +x Update.sh
-unzip php.zip
-rm php.zip 
+mkdir php
+cp /var/php/* php
 rm master.zip
 clear
 echo "Update complete..."
