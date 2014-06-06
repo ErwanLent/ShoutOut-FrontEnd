@@ -32,35 +32,27 @@ module.exports = function(grunt) {
         dest: 'css/',
         ext: '.min.css'
       }
-    },
-
-    uncss: {
-      dist: {
-        src: ['index.html', 'media.html', 'contact.html'],
-        dest: '/css/tidy.css'
-      },
-      options: {
-          ignore: ['.gradient']
-      }
     }
-
   });
 
   // Watch for changes
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Clean up css
-  grunt.loadNpmTasks('grunt-uncss');
+  //grunt.loadNpmTasks('grunt-uncss');
 
   // Minify JS
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  //grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Minify CSS
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
-  grunt.registerTask('default', ['uncss', 'uglify', 'cssmin']);
+  //grunt.registerTask('default', ['uncss', 'uglify', 'cssmin']);
 
   // Clean CSS task
-  grunt.registerTask('cleancss', ['uncss']);
+  //grunt.registerTask('cleancss', ['uncss']);
+
+  // Minify CSS
+  grunt.registerTask('min', ['cssmin']);
 };

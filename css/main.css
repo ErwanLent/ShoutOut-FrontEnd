@@ -1025,7 +1025,7 @@ a
     margin: auto;
     background-image: url('/img/sent.gif');
     max-width: 210px;
-    max-height: 255px;
+    height: 255px;
     background-repeat: no-repeat;
     background-position-x: -45px;
 }
