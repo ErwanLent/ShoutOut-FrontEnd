@@ -531,6 +531,11 @@ a
 
 .chatroom-slider
 {
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    -ms-transform:translate3d(0, 0, 0);
+    -o-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
     background-image: url("/img/slider.png");
     background-size: contain;
     width: 100%;
@@ -844,6 +849,14 @@ a
   opacity: 1;
 }
 
+.contact-emails
+{
+    font-size: 18px;
+    font-family: proxima_nova_rgregular;
+    margin: 20px;
+    text-align: center;
+}
+
 .email-button
 {
     display: inline-block;
@@ -911,13 +924,18 @@ a
     border:2px solid #FF3D33;
 }
 
-.email-form input, .email-form textarea
+.email-form input, 
+.email-form textarea
 {
-    padding: 7px 10px;
+    padding: 7px 30px 7px 10px;
     background-image: url(/img/invalid-icon.png);
     background-position: 98%;
     background-repeat: no-repeat;
     border: 2px rgb(169, 169, 169) solid;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .email-form input:valid, 
@@ -933,10 +951,15 @@ a
     background-position: 98% 8px;
 }
 
+.email-form .hidden
+{
+    display: none;
+}
+
 #email-submit
 {
     outline: 0;
-    width: 99%;
+    width: 100%;
     background-color: rgba(255, 61, 51, 1);
     border: none;
     color: white;
@@ -970,17 +993,17 @@ a
     text-align: center;
 }
 
-.media p
-{
-    font-size: 18px;
-    font-family: proxima_nova_rgregular;
-    margin: 20px;
-    text-align: center;
-}
-
 .media .media-description
 {
     text-align: left;
+    font-size: 18px;
+    font-family: proxima_nova_rgregular;
+    margin: 20px;
+}
+
+.media .media-description h3
+{
+    text-align: center;
 }
 
 .media a

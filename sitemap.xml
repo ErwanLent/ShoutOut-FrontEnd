@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 	  <loc>http://getshoutout.me/</loc>
-	  <lastmod>2014-03-05T07:35:55+00:00</lastmod>
+	  <lastmod>2014-06-15T12:45:00+00:00</lastmod>
 	</url>
 	<url>
 	  <loc>http://getshoutout.me/media/</loc>
-	  <lastmod>2014-03-05T20:16:35+00:00</lastmod>
+	  <lastmod>2014-06-15T12:45:00+00:00</lastmod>
+	</url>
+	<url>
+	  <loc>http://getshoutout.me/contact/</loc>
+	  <lastmod>2014-06-15T12:45:00+00:00</lastmod>
 	</url>
 </urlset>

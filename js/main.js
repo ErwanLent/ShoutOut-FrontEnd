@@ -154,33 +154,23 @@ $(document).ready(function()
 	$('.icon-list').click(function(){
 		if (!isShowing)
 		{
-			$('.top-bar ul').css('float', 'none');
-			$('.top-bar ul').css('display', 'block');
-			$('.top-bar li').css('text-align', 'center');
-			$('.top-bar li').slideToggle();
+			openMenu();
 			isShowing = true;
 		}
 		else
 		{
 			$('.top-bar li').slideToggle(function() {
-				$('.top-bar ul').removeAttr('style');
-				$('.top-bar li').removeAttr('style');
-				isShowing = false;
-
-				resetMenu();
+				closeMenu();
 			});
+
+			isShowing = false;
 		}
 	});
 
 	// Close Menu On Item Click
 	$('.top-bar li a').click(function(){
-		$('.top-bar li').slideToggle(function() {
-			$('.top-bar ul').removeAttr('style');
-			$('.top-bar li').removeAttr('style');
-			isShowing = false;
-
-			resetMenu();
-		});
+		closeMenu();
+		isShowing = false;
 	});
 
 	$( window ).resize(function() {
@@ -198,12 +188,21 @@ $(document).ready(function()
 
   		if (isShowing && $(window).width() > 450)
   		{
-			$('.top-bar li').slideToggle(function() {
-				$('.top-bar ul').removeAttr('style');
-				$('.top-bar li').removeAttr('style');
-				isShowing = false;
+  			isShowing = false;
 
-				resetMenu();
+			$('.top-bar li').slideToggle(function() {
+				closeMenu();
+
+				var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+				if (isChrome)
+				{
+					// Fixes chrome rendering bug
+					$('.top-bar').hide();
+					setTimeout(function(){
+						$('.top-bar').show();
+					}, 10);
+				}
 			});
   		}
 	});
@@ -272,13 +271,23 @@ function toggleEmailThankYou()
 	});
 }
 
-function resetMenu()
+function closeMenu()
 {
-	// Fixed chrome rendering issue
-	$('.top-bar').hide();
-	setTimeout(function(){
-		$('.top-bar').show();
-	}, 1);
+	$('.top-bar').css('max-height', '50px');
+
+	$('.top-bar ul').removeAttr('style');
+	$('.top-bar li').removeAttr('style');
+}
+
+function openMenu()
+{
+	$('.top-bar').removeAttr('style');
+
+	$('.top-bar ul').css('float', 'none');
+	$('.top-bar ul').css('display', 'block');
+	$('.top-bar li').css('text-align', 'center');
+
+	$('.top-bar li').slideToggle();
 }
 
 function isValidEmail(email) 

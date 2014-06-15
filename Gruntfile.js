@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: [ '/js/*.js', 'css/*.css' ],
-        tasks: ['default'],
+        files: [ 'css/*.css' ],
+        tasks: ['cssmin'],
       },
     },
 
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     cssmin: {
       minify: {
         expand: true,
-        cwd: '/css/',
+        cwd: 'css/',
         src: ['*.css', '!*.min.css'],
         dest: 'css/',
         ext: '.min.css'
