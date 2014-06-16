@@ -1665,7 +1665,8 @@
   }
 }
 
-.animated.flip {
+.animated.flip 
+{
   -webkit-backface-visibility: visible;
   -ms-backface-visibility: visible;
   backface-visibility: visible;
@@ -2447,7 +2448,8 @@
   }
 }
 
-.slideInDown {
+.slideInDown 
+{
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
 }

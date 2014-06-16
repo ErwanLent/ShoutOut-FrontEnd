@@ -321,6 +321,7 @@ a
     color-stop(0, #FF5E3A),
     color-stop(1, #FF2A66)
     );
+
     background-image: -o-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
     background-image: -moz-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
     background-image: -webkit-linear-gradient(bottom, #FF5E3A 0%, #FF2A66 100%);
@@ -392,6 +393,7 @@ a
 {
     display: inline-block;
     margin: 20px;
+
     -webkit-transition: all ease 0.3s;
     -moz-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
@@ -430,12 +432,13 @@ a
     height: 105px;
     width: 105px;
     margin: 10px;
+    border-radius: 100%;
+
     -webkit-transition: all ease 0.3s;
     -moz-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
     -ms-transition: all ease 0.3s;
     transition: all ease 0.3s;
-    border-radius: 100%;
 }
 
 .social-slide li a
@@ -490,6 +493,7 @@ a
     width: 100%;
     border: 0;
     height: 1px;
+    
     background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
     background-image: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
     background-image: -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));

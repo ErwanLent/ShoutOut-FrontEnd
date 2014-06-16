@@ -6,7 +6,7 @@ $(document).ready(function()
 
 	$('#bottom-anchor').click(function() {
 		$('html, body').stop().animate({
-			scrollTop: $(document).height() - $(window).height()
+			scrollTop: $(document).height() - ($(window).height() - 100)
 		}, 1400, 'easeInOutCubic');
 	});
 
@@ -144,6 +144,21 @@ $(document).ready(function()
 			$('.error').fadeIn();
 		}
 	});
+
+	if (isIos())
+	{
+		$('.subscriber-email').focus(function() {
+			// Open iOS virtual keyboard
+			$('.top-bar').css('position', 'absolute');
+			$('.logo-text').css('position', 'absolute');
+		});
+
+		$('.subscriber-email').blur(function() {
+			// Close iOS virtual keyboard
+			$('.top-bar').css('position', 'fixed');
+			$('.logo-text').css('position', 'fixed');
+		});
+	}
 
 	/*=====================================================================================
 		Responsive Hamburger Menu
@@ -306,4 +321,9 @@ function isIphone()
 		return true;
 	else
 		return false;
+}
+
+function isIos()
+{
+	return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 }
