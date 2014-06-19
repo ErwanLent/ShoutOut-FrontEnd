@@ -1,8 +1,6 @@
 <?php
 	include "../cms/php/connect.php";
 
-	session_start();
-
 	$page = "";
 
 	if (isset($_GET["page"]))
