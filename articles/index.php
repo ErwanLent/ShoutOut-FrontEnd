@@ -1,5 +1,5 @@
 <?php
-	include "/cms/php/connect.php";
+	include "../cms/php/connect.php";
 
 	$page = "";
 
