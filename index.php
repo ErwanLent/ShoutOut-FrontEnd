@@ -1,5 +1,5 @@
 <?php
-	include "/cms/php/connect.php";
+	include "cms/php/connect.php";
 
     $template = file_get_contents("template.html");
 
