@@ -1176,7 +1176,25 @@ a
 
 .media.article p
 {
-    margin: 10px 0 10px 0;
+    margin: 0;
+}
+
+.mediumInsert .mediumInsert-images.small
+{
+    float: left;
+    width: 30%;
+    margin: 10px 25px 10px 0;
+}
+
+.mediumInsert-images.small img
+{
+    width: 100%;
+}
+
+.mediumInsert .mediumInsert-images
+{
+    margin: 20px 0 5px 0;
+    text-align: center;
 }
 
 /*
