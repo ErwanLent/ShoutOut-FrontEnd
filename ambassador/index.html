@@ -6,13 +6,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ShoutOut - Media Assets</title>
-    <meta name="description" content="All ShoutOut media assets can be found on this page.">
+    <title>ShoutOut - Ambassador</title>
+    <meta name="description" content="All ShoutOut media assets can be found on this page. ">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Erwan Lent">
+    
     <link rel="stylesheet" href="/css/normalize.min.css">
     <link rel="stylesheet" href="/css/animate.min.css">
     <link rel="stylesheet" href="/css/main.min.css">
+    
     <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -31,7 +33,7 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/team/" >Team</a>
+                    <a href="/team/">Team</a>
                 </li>
                 <li>
                     <a href="http://blog.getshoutout.me/" target="_blank">Our Blog</a>
@@ -45,72 +47,32 @@
             </ul>
         </div>
     </nav>
-    <section class="media article">
-        <h1>
-        <%FIRST_TITLE%>
-        </h1>
-        <div class="media-description">
-            <%FIRST_CONTENT%>
-            <div class="center">
-                ShoutOut is coming to iOS and Android.
-            </div>
+    <section class="media ambassador">
+        <div class="pin-container">
+            <div class="pin hatch"></div>
         </div>
-        <div class="grid">
-            <a class="download" href="/assets/shoutout-assets.zip" target="_blank">
-                Download Press Kit
-            </a>
-            <ul>
-                <li>
-                    <a href="/assets/map-hand.png" target="_blank">
-                        <img src="/assets/map-hand-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/double-map.png" target="_blank">
-                        <img src="/assets/double-map-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/chatrooms.png" target="_blank">
-                        <img src="/assets/chatrooms-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/logo.png" target="_blank">
-                        <img src="/assets/logo-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/3dBuildingMapView.png" target="_blank">
-                        <img src="/assets/3dBuildingMapView-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/loginScreen.png" target="_blank">
-                        <img src="/assets/loginScreen-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/mapViewPlain.png" target="_blank">
-                        <img src="/assets/mapViewPlain-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/mapViewAngle.png" target="_blank">
-                        <img src="/assets/mapViewAngle-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/subscribedChatrooms.png" target="_blank">
-                        <img src="/assets/subscribedChatrooms-thumb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="/assets/teamShoutOutMapPin.png" target="_blank">
-                        <img src="/assets/teamShoutOutMapPin-thumb.png">
-                    </a>
-                </li>
-            </ul>
+        <h1>Ambassador Form</h1>
+        <p>
+            Help us promote ShoutOut at your school! Receive a care package from us filled with swag. In return, we'll give you a signed letter of recomendation as well as a LinkedIn recommendation. Put something solid on your resume.
+        </p>
+        <div class="email-form">
+            <div class="form">
+                <div class="sent"></div>
+                <div class="contents">
+                    <div class="error-field">
+                        Please enter in all the fields correctly.
+                    </div>
+                    <input id="name-input" type="text" placeholder="Your name" required/>
+                    <input id="email-input" type="email" placeholder="Your email" required/>
+                    <input id="school-input" type="text" placeholder="Your school" required/>
+                    <input id="fb-input" type="text" placeholder="Your facebook profile" required/>
+                    <!-- HoneyPot -->
+                    <input type="text" placeholder="Your website" class="hidden"/>
+                    <!-- End HoneyPot -->
+                    <textarea id="message-input" placeholder="A brief descrption about yourself" required></textarea>
+                    <button id="email-submit" type="button">Send</button>
+                </div>
+            </div>
         </div>
     </section>
     <footer class="download-app">
@@ -134,8 +96,8 @@
     </footer>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="/js/media.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="/js/ambassador.js"></script>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

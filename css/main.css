@@ -1248,6 +1248,19 @@ a
     margin-bottom: 50px;
 }
 
+.ambassador p
+{
+    font-family: proxima_nova_rgregular;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.ambassador h1
+{
+    margin-bottom: 0;
+}
+
 /*
 ==============================================
 Hatch Animation
