@@ -1197,6 +1197,57 @@ a
     text-align: center;
 }
 
+.media.team .media-description
+{
+    text-align: center;
+}
+
+.members
+{
+    display: inline-block;
+}
+
+.members li
+{
+    display: inline-block;
+    list-style: none;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.team-text
+{
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.team-text .title
+{
+    font-size: 20px;
+}
+
+.team .center
+{
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.team .description
+{
+    display: block;
+}
+
+.media.article.team
+{
+    margin-bottom: 100px;
+}
+
+.team-info
+{
+    margin-bottom: 50px;
+}
+
 /*
 ==============================================
 Hatch Animation
