@@ -66,10 +66,6 @@ $(document).ready(function()
 		Contact Form
 	=======================================================================================*/
 
-	setTimeout(function(){
-		$('.pin').show();
-	}, 200);
-
 	var isErrorBoxShowing = false;
 
 	$('#email-submit').click(function(){
