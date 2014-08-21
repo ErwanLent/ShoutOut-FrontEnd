@@ -10,8 +10,6 @@ cd /var/
 cd www/sites/getshoutout.me
 chmod +x Update.sh
 mkdir php
-mkdir cms
 cp /var/php/* php
-cp -a /var/cms/ /var/www/sites/getshoutout.me
 rm master.zip
 echo "Update complete..."

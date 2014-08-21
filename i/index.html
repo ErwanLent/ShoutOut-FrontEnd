@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="invite">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>ShoutOut - Location Based Chatrooms</title>
+	    <meta name="description" content="ShoutOut is a location based chatting app coming soon to iPhone, iPad, and Android. Users can create or join chatrooms based on their location.">
+	    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, target-densityDpi=device-dpi">
+	    <meta name="author" content="Erwan Lent">
+	    <link rel="stylesheet" href="/css/normalize.min.css">
+	    <link rel="stylesheet" href="/css/main.min.css">
+	    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+	    <!--[if lt IE 7]>
+	    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	    <![endif]-->
+		<div class="container">
+			<div class="inner-container">
+				<img class="logo" src="/img/logo.png" alt="ShoutOut Logo">
+				<h1>Join Chatroom</h1>
+				<div class="installed hidden">
+					<h1>
+						Chatroom launched!
+					</h1>
+				</div>
+				<div class="not-installed hidden">
+					<p>
+						Looks like you don't have ShoutOut installed. Head over to the app store to download it.
+						<a href="https://itunes.apple.com/us/app/shoutout-location-based-chatrooms/id895254896?ls=1&mt=8" target="_blank">
+							<img src="/img/app-store.png">
+						</a>
+					</p>
+				</div>
+				<div class="pending">
+					Launching Chatroom...
+					<div class="spinner"></div>
+				</div>
+			</div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		    ga('create', 'UA-48286845-1', 'getshoutout.me');
+		    ga('send', 'pageview');
+    	</script>
+	</body>
+</html>
