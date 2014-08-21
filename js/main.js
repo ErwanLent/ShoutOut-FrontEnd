@@ -1,21 +1,5 @@
 $(document).ready(function() {
     /*=====================================================================================
-		Load Map With Santa Barbara Coordinates
-	=======================================================================================*/
-
-    var isMapLoaded = false;
-
-    if (!isIphone() && $(window).width() > 730) {
-        var latitude = 34.4258;
-        var longitude = -119.7142;
-
-        var map = loadMap(latitude, longitude);
-        isMapLoaded = true;
-    } else {
-        $('.gradient').removeClass('color-overlay');
-    }
-
-    /*=====================================================================================
 		Hangle Logo And Map Animations
 	=======================================================================================*/
 
@@ -35,28 +19,14 @@ $(document).ready(function() {
         $('.right-column').removeClass('hidden');
     }, 700);
 
-    if (isMapLoaded) {
-        setInterval(function() {
-            // Reset longitude at end of map
-            if ((longitude + .1) >= 180)
-                longitude = -180;
+    var mapLocation = -270;
 
-            longitude += .03;
-            map.setCenter(new google.maps.LatLng(latitude, longitude));
-        }, 10);
-    }
+    setInterval(function() {
+        $('.intro').css('background-position', mapLocation + 'px 0px');
+        mapLocation -= .2;
+    }, 10);
 
-    // iPhone Modifications
-    if (isIphone()) {
-        $('.section-separator').css('background-size', '700px');
-        $('.section-separator').css('background-attachment', 'inherit');
-    }
 
-    // var backgroundPosition = 0;
-    // setInterval(function() {
-    //     $('.section-separator').css('background-position-y', backgroundPosition + 'px');
-    //     backgroundPosition--;
-    // }, 10);
     /*=====================================================================================
 		Handle iPhone Chatroom Sliding Animation
 	=======================================================================================*/
