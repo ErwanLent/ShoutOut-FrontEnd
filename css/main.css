@@ -294,7 +294,7 @@ a
     width: 100%;
     background-color: #FF3D33; 
     background-image: url('/img/map.png');
-    background-position: -270px 0px;
+    background-position: -270px -120px;
     text-align: center;
     background-size: cover;
 }
@@ -630,7 +630,7 @@ a
 .team-separator
 {
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     background-image: url('/img/team-bg.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -645,14 +645,7 @@ a
 {
     width: 100%;
     height: 100%;
-    background: -moz-linear-gradient(top,  rgba(255,94,58,0.6) 0%, rgba(255,42,104,0.6) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,94,58,0.6)), color-stop(100%,rgba(255,42,104,0.6))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(255,94,58,0.6) 0%,rgba(255,42,104,0.6) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ff5e3a', endColorstr='#99ff2a68',GradientType=0 ); /* IE6-9 */
-
+    background-color: rgba(127, 140, 141, .65);
 }
 
 .press-logos
@@ -733,6 +726,7 @@ a
     font-family: proxima_nova_rgbold;
     font-size: 31px;
     padding-top: 65px;
+    color: white;
 }
 
 .animation-container
@@ -1328,7 +1322,7 @@ a
 
 .media.article.team
 {
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 }
 
 .team-info
