@@ -296,6 +296,7 @@ a
     background-image: url('/img/map.png');
     background-position: -270px 0px;
     text-align: center;
+    background-size: cover;
 }
 
 #map 
@@ -512,6 +513,25 @@ a
     outline-width: 0;
     font-family: proxima_nova_rgregular;
     padding: 2px;
+}
+
+.get-app
+{
+    position: relative;
+    border: 2px solid white; 
+    border-radius: 5px; 
+    margin: auto;
+    color: white;
+    font-family: proxima_nova_rgregular;
+    text-align: center;
+    padding: 10px;
+}
+
+.text:hover
+{
+    color: black;
+    background-color: white;
+    opacity: .35;
 }
 
 .email-input:focus

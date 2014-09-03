@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: [ 'css/*.css' ],
+        files: [ 'css/*.css', '!css/*.min.css' ],
         tasks: ['cssmin'],
       },
     },

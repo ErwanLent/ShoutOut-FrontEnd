@@ -6,7 +6,7 @@ $('document').ready(function(){
 
 	if (isIos)
 	{
-		document.location = 'ShoutOut://?inviteCode=' + inviteKey;
+		document.location = 'cfcc113fbbc://?inviteCode=' + inviteKey;
 		setTimeout( function() {
 			$('.pending').hide();
 			$('.not-installed').removeClass('hidden');
