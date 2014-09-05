@@ -517,6 +517,7 @@ a
 
 .get-app
 {
+    display: none;
     position: relative;
     border: 2px solid white; 
     border-radius: 5px; 
@@ -524,7 +525,20 @@ a
     color: white;
     font-family: proxima_nova_rgregular;
     text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
+    outline: none;
+
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+.get-app:hover
+{
+    background-color: white;
+    color: #34495e;
 }
 
 .text:hover
@@ -731,12 +745,24 @@ a
 
 .animation-container
 {
-    width: 350px;
+    width: 317px;
     padding-top: 50px;
     min-height: 658px;
-    padding-bottom: 15px;
+    padding-bottom: 50px;
     display: inline-block;
     float: left;
+}
+
+.messages
+{
+    position: absolute;
+    width: 264px;
+    height: 378px;
+    margin-left: 28px;
+    margin-top: 152px;
+
+    background: url('/img/messages.png');
+    background-size: 264px 1002px;
 }
 
 .content-header
@@ -1257,7 +1283,7 @@ a
 
 .media.article p
 {
-    margin: 0;
+    margin: 20px;
 }
 
 .mediumInsert .mediumInsert-images.small
@@ -1281,6 +1307,13 @@ a
 .media.team .media-description
 {
     text-align: center;
+}
+
+.team .download
+{
+    display: block;
+    width: 94px;
+    margin: 50px auto 50px auto;
 }
 
 .members

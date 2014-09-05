@@ -1,7 +1,11 @@
 $(document).ready(function() {
 
+    /*=====================================================================================
+        Set Parallax
+    =======================================================================================*/
 
-    $('.intro-content').parallax("90%", 0.4);
+    $('.intro-content').parallax("logo", 0.4);
+    $('.intro').parallax("map", 1);
 
     /*=====================================================================================
 		Hangle Logo And Map Animations
@@ -16,6 +20,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
         $('.intro-content h1').show();
+        $('.get-app').fadeIn();
     }, 2000);
 
     setTimeout(function() {
@@ -26,41 +31,16 @@ $(document).ready(function() {
     var mapLocation = -270;
 
     setInterval(function() {
-        $('.intro').css('background-position', mapLocation + 'px 0px');
+        var yPosition = $('.intro').css('background-position').split(' ')[1];
+        $('.intro').css('background-position', mapLocation + 'px ' + yPosition);
         mapLocation -= .2;
     }, 10);
 
-
     /*=====================================================================================
-		Handle iPhone Chatroom Sliding Animation
-	=======================================================================================*/
+        Chatting Animation
+    =======================================================================================*/
 
-    var marginRight = 72;
-    var marginLeft = 145;
-    var state = "right";
-
-
-    if ($(window).width() <= 485) {
-        marginLeft = 125;
-        marginRight = 60;
-    }
-
-    setInterval(function() {
-        switch (state) {
-            case "right":
-                $('.chatroom-slider').css('margin-left', marginRight);
-                state = "left";
-                break;
-            case "left":
-                $('.chatroom-slider').css('margin-left', marginLeft * -1);
-                state = "reset";
-                break;
-            case "reset":
-                $('.chatroom-slider').css('margin-left', 0);
-                state = "right";
-                break;
-        }
-    }, 1500);
+    //$('.messages').css('background-position', '');
 
     /*=====================================================================================
 		Button Color Changer
@@ -185,35 +165,6 @@ $(document).ready(function() {
     });
 
 });
-
-function loadMap(latitude, longitude) {
-    var map;
-    var pgLocation = new google.maps.LatLng(34.4258, -119.7142);
-
-    var pgOptions = {
-        zoom: 3,
-        center: pgLocation,
-        scrollwheel: false,
-        mapTypeControl: false,
-        streetViewControl: false,
-        disableDefaultUI: true,
-        styles: [{
-            "featureType": "all",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "water",
-            "stylers": [{
-                "visibility": "on"
-            }, {
-                "lightness": -100
-            }]
-        }]
-    };
-
-    return new google.maps.Map(document.getElementById("map"), pgOptions);
-}
 
 function toggleEmailThankYou() {
     // Clear email

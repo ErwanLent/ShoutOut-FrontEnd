@@ -1,16 +1,3 @@
-/*
-Plugin: jQuery Parallax
-Version 1.1.3
-Author: Ian Lunn
-Twitter: @IanLunn
-Author URL: http://www.ianlunn.co.uk/
-Plugin URL: http://www.ianlunn.co.uk/plugins/jquery-parallax/
-
-Dual licensed under the MIT and GPL licenses:
-http://www.opensource.org/licenses/mit-license.php
-http://www.gnu.org/licenses/gpl.html
-*/
-
 (function( $ ){
 	var $window = $(window);
 	var windowHeight = $window.height();
@@ -59,14 +46,22 @@ http://www.gnu.org/licenses/gpl.html
 					return;
 				}
 
-				var topMargin =  155 - (pos * .3333);
+				var className = $this.attr('class');
 
-				if (topMargin > 0)
+				if (className == 'intro-content')
 				{
-					$this.css('margin-top', topMargin);
+					var topMargin =  155 - (pos * .3333);
+
+					if (topMargin > 0)
+					{
+						$this.css('margin-top', topMargin);
+					}
 				}
-				
-				//$this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+				else
+				{
+					var xPosition = $('.intro').css('background-position').split(' ')[0];
+					$this.css('backgroundPosition', xPosition + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+				}
 			});
 		}		
 
