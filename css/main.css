@@ -645,7 +645,7 @@ a
 {
     width: 100%;
     min-height: 200px;
-    background-image: url('/img/team-bg.png');
+    background-image: url('/img/team-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -761,8 +761,21 @@ a
     margin-left: 28px;
     margin-top: 152px;
 
-    background: url('/img/messages.png');
+    background: url('/img/messages.jpg');
     background-size: 264px 1002px;
+
+    transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -o-transition: all 0.8s;
+}
+
+.messages.no-transition
+{
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none;
 }
 
 .content-header
@@ -907,7 +920,7 @@ a
     min-height: 350px;
     text-align: center;
     color: white;
-    background: #2e2f41 url(/img/footer.png) no-repeat;
+    background: #2e2f41 url(/img/footer.jpg) no-repeat;
     background-position: 0 -200px;
     background-size: cover;
 }

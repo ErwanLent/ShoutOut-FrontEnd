@@ -40,6 +40,38 @@ $(document).ready(function() {
         Chatting Animation
     =======================================================================================*/
 
+    var animationPositions = [100, 144, 205, 249, 413, 475, 537, 581, 625, 686, 730, 894, 938, 1002];
+
+    var messageAnimationCounter = 0;
+
+    (function animateMessages() {
+    var randomTimeout = 3;
+        setTimeout(function() {
+
+            if (messageAnimationCounter >= animationPositions.length)
+            {
+                messageAnimationCounter = 0;
+
+                // Reset position without animation
+                $('.messages').addClass('no-transition');
+
+                setTimeout(function(){
+                    $('.messages').css('background-position', '0px 0px');
+                }, 100);
+            }
+            else
+            {
+                $('.messages').removeClass('no-transition');
+                $('.messages').css('background-position', '0px ' + -animationPositions[messageAnimationCounter] + 'px');
+
+                messageAnimationCounter++;
+            }
+
+            animateMessages(); 
+
+        }, randomTimeout * 1000);
+    }());
+
     //$('.messages').css('background-position', '');
 
     /*=====================================================================================
